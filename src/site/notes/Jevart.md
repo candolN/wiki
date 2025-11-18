@@ -41,4 +41,3 @@
 
 ## 相關短篇
 ---
-身份：<span style="background-color: black; color: black;" onmouseover="this.style.color='white'" onmouseout="this.style.color='black'">已死亡</span>
