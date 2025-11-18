@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/Kolautte/","noteIcon":""}
+{"dg-publish":true,"permalink":"/Kolautte/"}
 ---
 
 (頭像)
@@ -7,7 +7,7 @@
  > * **全名：**Kolautte Enfez
  >  * **代號/綽號：**Kol、死刀子
  >  * **身份：**傭兵
- >  * **相關人物：**[[Jevart\|Jevart]](同夥)、[[Lokautte\|Lokautte]](兄弟)、[[Kol的兒子\|Kol的兒子]]
+ >  * **相關人物：** [[Jevart\|Jevart]](同夥)、[[Lokautte\|Lokautte]](兄弟)、[[Kol的兒子\|Kol的兒子]]
 
 ## 簡介
 ---
