@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/Jevart/","tags":["gardenEntry"],"noteIcon":""}
+{"dg-publish":true,"permalink":"/Jevart/","tags":["gardenEntry"]}
 ---
 
  (頭像)
