@@ -86,18 +86,30 @@ strong, b {
   animation: shake-crazy 0.5s infinite;
 }
 
-/* 呼吸特效 */
-@keyframes breathing-anim {
-  0% { transform: scale(1); opacity: 1; }
-  50% { transform: scale(1.05); opacity: 0.8; }
-  100% { transform: scale(1); opacity: 1; }
+/* 定義：紅光呼吸動畫 */
+@keyframes breath-red-glow {
+  0% {
+    transform: scale(1);
+    /* 陰影小且淡 */
+    text-shadow: 0 0 2px rgba(214, 40, 40, 0.3); 
+  }
+  50% {
+    transform: scale(1.05); /* 微微放大 */
+    /* 陰影變大、變亮，顏色採用你主題的紅色 (214, 40, 40) */
+    text-shadow: 0 0 15px rgba(214, 40, 40, 0.9), 0 0 5px rgba(214, 40, 40, 0.6);
+  }
+  100% {
+    transform: scale(1);
+    text-shadow: 0 0 2px rgba(214, 40, 40, 0.3);
+  }
 }
 
-.breathing {
+/* 應用 */
+.breathing-red {
   display: inline-block;
-  animation: breathing-anim 3s infinite ease-in-out;
+  animation: breath-red-glow 3s infinite ease-in-out;
+  color: #fff; /* 建議文字本身設為白色或淺色，紅光才明顯 */
 }
-
 /* 慢速浮現 */
 @keyframes appear-slow-anim {
   from { opacity: 0; }
