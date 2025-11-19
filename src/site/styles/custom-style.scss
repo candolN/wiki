@@ -13,14 +13,6 @@ body {
   --text-highlight-bg: rgba(var(--ugo-red-rgb), 0.3) !important;
 }
 
-/* 背景：點陣網絡 */
-body {
-  background-color: var(--ugo-bg) !important;
-  background-image: radial-gradient(var(--ugo-dot) 20%, transparent 20%) !important;
-  background-position: 0 0, 10px 10px !important;
-  background-size: 20px 20px !important;
-}
-
 /* 高亮黃筆修正 */
 html body mark,
 html body .cm-highlight,
