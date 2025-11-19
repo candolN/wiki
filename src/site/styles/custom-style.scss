@@ -1,13 +1,117 @@
+/* ==========================================
+   1. 從 dark-mode-boxes.css 搬過來的樣式
+   ========================================== */
+
+/* 定義紅色變數 */
 body {
-    /***
-      ADD YOUR CUSTOM STYLING HERE. (INSIDE THE body {...} section.)
-      IT WILL TAKE PRECEDENCE OVER THE STYLING IN THE STYLE.CSS FILE.
-   ***/
-    //  background-color: white;
-    //  .content {
-    //   font-size: 14px;
-    //  }
-    //  h1 {
-    //   color: black;
-    //  }
+  --ugo-red-rgb: 214, 40, 40;
+  --ugo-red: rgb(var(--ugo-red-rgb));
+  --ugo-bg: #ffffff;
+  --ugo-dot: #d0d0d0;
+  --ugo-black: #111111;
+  --ugo-shadow: 4px 4px 0px;
+  --text-highlight-bg: rgba(var(--ugo-red-rgb), 0.3) !important;
+}
+
+/* 背景：點陣網絡 */
+body {
+  background-color: var(--ugo-bg) !important;
+  background-image: radial-gradient(var(--ugo-dot) 20%, transparent 20%) !important;
+  background-position: 0 0, 10px 10px !important;
+  background-size: 20px 20px !important;
+}
+
+/* 高亮黃筆修正 */
+html body mark,
+html body .cm-highlight,
+html body .markdown-rendered mark {
+  background-color: rgba(var(--ugo-red-rgb), 0.3) !important;
+  color: var(--ugo-red) !important;
+  border-radius: 0px !important;
+  padding: 0 2px !important;
+  box-shadow: none !important;
+}
+
+/* Callout 框框修正 (重點！) */
+html body .callout,
+html body .callout[data-callout="info"] {
+  background-color: #fff !important;
+  border: 2px solid var(--ugo-black) !important;
+  border-left: 6px solid var(--ugo-red) !important;
+  border-radius: 0 !important;
+  box-shadow: var(--ugo-shadow) var(--ugo-black) !important;
+  --callout-color: var(--ugo-red-rgb) !important;
+  --callout-icon: var(--ugo-red-rgb) !important;
+}
+
+/* 強制 Icon 顏色 */
+html body .callout .callout-icon,
+html body .callout[data-callout="info"] .callout-icon {
+  color: var(--ugo-red) !important;
+  stroke: var(--ugo-red) !important;
+  fill: var(--ugo-red) !important;
+}
+
+/* 強制標題顏色 */
+html body .callout .callout-title {
+  color: var(--ugo-red) !important;
+  font-weight: bold !important;
+}
+
+/* 圖片像素化 (如果不需要像素風，可刪除下面這段 img {}) */
+img {
+  image-rendering: pixelated;
+  border: 2px solid var(--ugo-black);
+  box-shadow: 4px 4px 0px rgba(0,0,0,0.2);
+}
+
+/* 粗體字變紅 */
+strong, b {
+  color: var(--ugo-red) !important;
+}
+
+/* ==========================================
+   2. 特效動畫 (Shake & Breath)
+   ========================================== */
+
+/* 瘋狂抖動特效 */
+@keyframes shake-crazy {
+  0% { transform: translate(2px, 1px) rotate(0deg); }
+  10% { transform: translate(-1px, -2px) rotate(-1deg); }
+  20% { transform: translate(-3px, 0px) rotate(1deg); }
+  30% { transform: translate(0px, 2px) rotate(0deg); }
+  40% { transform: translate(1px, -1px) rotate(1deg); }
+  50% { transform: translate(-1px, 2px) rotate(-1deg); }
+  60% { transform: translate(-3px, 1px) rotate(0deg); }
+  70% { transform: translate(2px, 1px) rotate(-1deg); }
+  80% { transform: translate(-1px, -1px) rotate(1deg); }
+  90% { transform: translate(2px, 2px) rotate(0deg); }
+  100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+
+.shake-crazy {
+  display: inline-block;
+  animation: shake-crazy 0.5s infinite;
+}
+
+/* 呼吸特效 */
+@keyframes breathing-anim {
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.05); opacity: 0.8; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.breathing {
+  display: inline-block;
+  animation: breathing-anim 3s infinite ease-in-out;
+}
+
+/* 慢速浮現 */
+@keyframes appear-slow-anim {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.appear-slow {
+  animation: appear-slow-anim 5s ease-in-out forwards;
 }
