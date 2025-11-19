@@ -2,6 +2,7 @@
 {"dg-publish":true,"permalink":"/中文版本/死刀子/角色/Jevart/"}
 ---
 
+# Jevart
  (頭像)
  > [!info] **資訊欄**
  > * **全名：** <span style="filter: blur(5px); user-select: none;">已廢棄</span>
