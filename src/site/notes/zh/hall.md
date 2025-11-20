@@ -32,7 +32,7 @@
 |                                                                                                                                                               👻 AO 系列                                                                                                                                                                |                                                                                                                                                            🩸 DK 系列                                                                                                                                                            |                                                                                                                                                              ⚙️ EGR 系列                                                                                                                                                              |
 | :-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
 | <b>非典型異事紀錄</b><br><br><small>STYLE / GENRE</small><br><br><span style="background:var(--ugo-red); color:white; padding:2px;">哥德式</span><br><span style="background:var(--ugo-red); color:white; padding:2px;">超自然</span><br><span style="background:var(--ugo-red); color:white; padding:2px;">青少年冒險</span><br><br>[[zh/Anomalous Observations/AO_Hub\|➢ 進入展區]] | <b>死刀子</b><br><br><small>STYLE / GENRE</small><br><br><span style="background:var(--ugo-red); color:white; padding:2px;">戰後</span><br><span style="background:var(--ugo-red); color:white; padding:2px;">血漿</span><br><span style="background:var(--ugo-red); color:white; padding:2px;">黑色電影</span><br><br>[[zh/Damned Knife/DK_Hub\|➢ 進入展區]] | <b>齒輪空房間</b><br><br><small>STYLE / GENRE</small><br><br><span style="background:var(--ugo-red); color:white; padding:2px;">荒謬</span><br><span style="background:var(--ugo-red); color:white; padding:2px;">黑色幽默</span><br><span style="background:var(--ugo-red); color:white; padding:2px;">政治驚悚</span><br><br>[[zh/Empty Gear Room/EGR_Hub\|➢ 進入展區]] |
-<br>
+<br><br>
 ### ❓ 常見問題
 
 > [!question] **Q1: 所以小說正文在哪裡？**
@@ -43,4 +43,6 @@
 > * **主網站**：收錄 ==完整的小說劇情== 以及帶有說明的 ==畫作==。
 > * **維基**：收錄 ==設定== 以及 ==零散的小故事==。
 
-
+<br>
+<hr>
+<center>[[Home\|↩️ 返回語言選單]]</center>
