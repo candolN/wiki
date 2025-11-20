@@ -1,90 +1,28 @@
-/* ==========================================
-   1. 從 dark-mode-boxes.css 搬過來的樣式
-   ========================================== */
-
-/* 定義紅色變數 */
-body {
-  --ugo-red-rgb: 214, 40, 40;
-  --ugo-red: rgb(var(--ugo-red-rgb));
-  --ugo-bg: #ffffff;
-  --ugo-dot: #d0d0d0;
-  --ugo-black: #111111;
-  --ugo-shadow: 4px 4px 0px;
-  --text-highlight-bg: rgba(var(--ugo-red-rgb), 0.3) !important;
+/* 定義：呼吸動作 (稍微放大縮小 + 透明度變化) */
+@keyframes breathing-anim {
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.05); opacity: 0.8; } /* 變大一點點，稍微透明 */
+  100% { transform: scale(1); opacity: 1; }
 }
 
-/* 高亮黃筆修正 */
-html body mark,
-html body .cm-highlight,
-html body .markdown-rendered mark {
-  background-color: rgba(var(--ugo-red-rgb), 0.3) !important;
-  color: var(--ugo-red) !important;
-  border-radius: 0px !important;
-  padding: 0 2px !important;
-  box-shadow: none !important;
+/* 應用：無限循環 */
+.breathing {
+  display: inline-block; /* 讓文字保持整塊一起動 */
+  animation: breathing-anim 3s infinite ease-in-out;
+  /* infinite 代表無限重複 */
 }
 
-/* Callout 框框修正 (重點！) */
-html body .callout,
-html body .callout[data-callout="info"] {
-  background-color: #fff !important;
-  border: 2px solid var(--ugo-black) !important;
-  border-left: 6px solid var(--ugo-red) !important;
-  border-radius: 0 !important;
-  box-shadow: var(--ugo-shadow) var(--ugo-black) !important;
-  --callout-color: var(--ugo-red-rgb) !important;
-  --callout-icon: var(--ugo-red-rgb) !important;
+/* 4. 呼吸燈效果 */
+@keyframes breathe {
+  0% { transform: scale(1); text-shadow: 0 0 10px white; }
+  50% { transform: scale(1.1); text-shadow: 0 0 20px red; }
+  100% { transform: scale(1); text-shadow: 0 0 10px white; }
 }
-
-/* 強制 Icon 顏色 */
-html body .callout .callout-icon,
-html body .callout[data-callout="info"] .callout-icon {
-  color: var(--ugo-red) !important;
-  stroke: var(--ugo-red) !important;
-  fill: var(--ugo-red) !important;
-}
-
-/* 強制標題顏色 */
-html body .callout .callout-title {
-  color: var(--ugo-red) !important;
-  font-weight: bold !important;
-}
-
-/* 圖片像素化 (如果不需要像素風，可刪除下面這段 img {}) */
-img {
-  image-rendering: pixelated;
-  border: 2px solid var(--ugo-black);
-  box-shadow: 4px 4px 0px rgba(0,0,0,0.2);
-}
-
-/* 粗體字變紅 */
-strong, b {
-  color: var(--ugo-red) !important;
-}
-
-/* ==========================================
-   2. 特效動畫 (Shake & Breath)
-   ========================================== */
-
-/* 瘋狂抖動特效 */
-@keyframes shake-crazy {
-  0% { transform: translate(2px, 1px) rotate(0deg); }
-  10% { transform: translate(-1px, -2px) rotate(-1deg); }
-  20% { transform: translate(-3px, 0px) rotate(1deg); }
-  30% { transform: translate(0px, 2px) rotate(0deg); }
-  40% { transform: translate(1px, -1px) rotate(1deg); }
-  50% { transform: translate(-1px, 2px) rotate(-1deg); }
-  60% { transform: translate(-3px, 1px) rotate(0deg); }
-  70% { transform: translate(2px, 1px) rotate(-1deg); }
-  80% { transform: translate(-1px, -1px) rotate(1deg); }
-  90% { transform: translate(2px, 2px) rotate(0deg); }
-  100% { transform: translate(1px, -2px) rotate(-1deg); }
-}
-
-.shake-crazy {
+.breathing {
   display: inline-block;
-  animation: shake-crazy 0.5s infinite;
+  animation: breathe 3s infinite ease-in-out;
 }
+</style>
 
 /* 定義：紅光呼吸動畫 */
 @keyframes breath-red-glow {
@@ -110,14 +48,94 @@ strong, b {
   animation: breath-red-glow 3s infinite ease-in-out;
   color: #fff; /* 建議文字本身設為白色或淺色，紅光才明顯 */
 }
-/* 慢速浮現 */
-@keyframes appear-slow-anim {
-  from { opacity: 0; }
-  to { opacity: 1; }
+
+/* ==============================================
+   Ugomeemo 風格 V3 - 核彈級權重覆蓋版
+   ============================================== */
+
+/* 1. 定義紅色變數 (使用 RGB 格式，方便調整透明度) */
+body {
+    --ugo-red-rgb: 214, 40, 40; /* 火磚紅 #D62828 */
+    --ugo-red: rgb(var(--ugo-red-rgb));
+    --ugo-bg: #ffffff;
+    --ugo-dot: #d0d0d0;
+    --ugo-black: #111111;
+    --ugo-shadow: 4px 4px 0px;
+    
+    /* [核彈修正] 直接覆蓋 Obsidian 底層的高亮變數 */
+    --text-highlight-bg: rgba(var(--ugo-red-rgb), 0.3) !important;
+}
+
+/* 2. 背景：點陣網格 */
+body {
+    background-color: var(--ugo-bg) !important;
+    background-image: radial-gradient(var(--ugo-dot) 20%, transparent 20%) !important;
+    background-position: 0 0, 10px 10px !important;
+    background-size: 20px 20px !important;
+}
+
+/* ==============================================
+   [修正] 殺死螢光黃 (針對 Red Graphite 的強力覆蓋)
+   ============================================== */
+html body mark, 
+html body .cm-highlight,
+html body .markdown-rendered mark {
+    background-color: rgba(var(--ugo-red-rgb), 0.3) !important; /* 紅色半透明底 */
+    color: var(--ugo-red) !important; /* 紅色字 */
+    border-radius: 0px !important;
+    padding: 0 2px !important;
+    box-shadow: none !important;
+}
+
+/* ==============================================
+   [修正] 殺死藍色 Icon (針對 Info Callout)
+   ============================================== */
+/* 我們用 html body 開頭，權重會比主題更高 */
+html body .callout,
+html body .callout[data-callout="info"] {
+    background-color: #fff !important;
+    border: 2px solid var(--ugo-black) !important;
+    border-left: 6px solid var(--ugo-red) !important;
+    border-radius: 0 !important;
+    box-shadow: var(--ugo-shadow) var(--ugo-black) !important;
+    
+    /* 關鍵：重置這個框框的內部顏色變數 */
+    --callout-color: var(--ugo-red-rgb) !important;
+    --callout-icon: var(--ugo-red-rgb) !important;
+}
+
+/* 強制 Icon 顏色 */
+html body .callout .callout-icon,
+html body .callout[data-callout="info"] .callout-icon {
+    color: var(--ugo-red) !important;
+    stroke: var(--ugo-red) !important; /* 有些主題是用 stroke */
+    fill: var(--ugo-red) !important;   /* 有些是用 fill */
+}
+
+/* 強制標題顏色 */
+html body .callout .callout-title {
+    color: var(--ugo-red) !important;
+    font-weight: bold !important;
+}
+
+/* ==============================================
+   其他優化
+   ============================================== */
+/* 圖片像素化 */
+img {
+    image-rendering: pixelated;
+    border: 2px solid var(--ugo-black);
+    box-shadow: 4px 4px 0px rgba(0,0,0,0.2);
+}
+
+/* 粗體字變紅 */
+strong, b {
+    color: var(--ugo-red) !important;
+}
 
 /* ==============================================
    大廳表格專用美化 (Ugomeemo Style)
-============================================== */
+   ============================================== */
 
 /* 1. 讓表格本身置中，並加粗外框 */
 .landing-page table {
@@ -168,8 +186,42 @@ strong, b {
     transform: translate(2px, 2px);
     box-shadow: 2px 2px 0px black;
 }
+
+/* 強制所有表格寬度填滿 */
+.landing-page table {
+    width: 100% !important;
 }
 
+/* 定義抖動的動畫關鍵影格 */
+@keyframes shake-crazy {
+  0% { transform: translate(2px, 1px) rotate(0deg); }
+  10% { transform: translate(-1px, -2px) rotate(-1deg); }
+  20% { transform: translate(-3px, 0px) rotate(1deg); }
+  30% { transform: translate(0px, 2px) rotate(0deg); }
+  40% { transform: translate(1px, -1px) rotate(1deg); }
+  50% { transform: translate(-1px, 2px) rotate(-1deg); }
+  60% { transform: translate(-3px, 1px) rotate(0deg); }
+  70% { transform: translate(2px, 1px) rotate(-1deg); }
+  80% { transform: translate(-1px, -1px) rotate(1deg); }
+  90% { transform: translate(2px, 2px) rotate(0deg); }
+  100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+
+/* 將動畫應用到你的 class 上 */
+.shake-crazy {
+  display: inline-block; /* 必須是 block 或 inline-block 才能變形 */
+  animation: shake-crazy 0.5s; /* 動畫名稱 與 時間 */
+  animation-iteration-count: infinite; /* 無限循環 */
+}
+
+/* 定義：從透明到實體 */
+@keyframes appear-slow-anim {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* 應用：設定時間與動畫名稱 */
 .appear-slow {
-  animation: appear-slow-anim 5s ease-in-out forwards;
+  animation: appear-slow-anim 5s ease-in-out forwards; 
+  /* 5s 代表 5秒，forwards 代表播完後停在最後的狀態（不會變回透明） */
 }
