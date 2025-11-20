@@ -205,3 +205,20 @@ table td a:hover {
     transform: translate(1px, 1px) !important;
     box-shadow: 1px 1px 0px black !important;
 }
+/* 強制大廳的三欄表格內容置中 */
+.landing-page td {
+    text-align: center !important;
+    vertical-align: top !important;
+}
+
+/* 確保表格內的 span 標籤（那些紅底白字的 Tag）也是置中的 */
+.landing-page td span {
+    display: inline-block;
+    margin: 2px auto;
+}
+
+/* 確保表格內的按鈕也是置中的 */
+.landing-page td a {
+    display: inline-block;
+    margin: 10px auto;
+}
