@@ -222,3 +222,15 @@ table td a:hover {
     display: inline-block;
     margin: 10px auto;
 }
+/* 強制表格內容完全置中 */
+.landing-page td {
+    text-align: center !important;
+    vertical-align: middle !important;
+}
+
+/* 確保按鈕不會飄移 */
+.landing-page td a {
+    display: inline-block !important;
+    margin: 5px auto !important;
+    text-align: center !important;
+}
