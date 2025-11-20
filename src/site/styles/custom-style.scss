@@ -129,108 +129,63 @@ html body .callout .callout-title {
     animation: appear-slow-anim 5s ease-in-out forwards;
 }
 
-
 /* ============================================================
-   PART 5: 表格全局美化 (GLOBAL TABLE STYLE)
+   PART 5: 終極表格修復 (GLOBAL TABLE & BUTTON FIX)
    ============================================================ */
 
-/* 強制所有表格都使用黑框風格，不只是 Landing Page */
+/* 1. 強制所有表格外框與背景 */
 table {
-    margin: 20px auto !important; /* 上下留白，左右置中 */
-    width: 100% !important;       /* 寬度填滿 */
-    max-width: 100% !important;   /* 防止爆版 */
+    margin: 20px auto !important;
+    width: 100% !important;
     border-collapse: collapse !important;
-    border: 2px solid var(--ugo-black) !important; /* 外框加粗 */
-    background-color: white !important; /* 背景純白，蓋住網點 */
+    border: 2px solid var(--ugo-black) !important;
+    background-color: white !important;
 }
 
-/* 表頭 (TH) */
+/* 2. 強制所有格子內容置中 (包含 Landing Page 和普通頁面) */
+th, td, .landing-page td {
+    border: 2px solid var(--ugo-black) !important;
+    padding: 15px !important;
+    vertical-align: middle !important; /* 垂直置中 */
+    text-align: center !important;     /* 水平置中 (這行最重要) */
+}
+
+/* 3. 表頭專屬樣式 */
 th {
     background-color: var(--ugo-black) !important;
     color: #ffffff !important;
-    border: 2px solid var(--ugo-black) !important;
-    text-align: center !important;
-    padding: 12px !important;
-    font-weight: bold;
-    font-size: 1.1em;
 }
 
-/* 內容格 (TD) */
-td {
-    background-color: #ffffff !important;
-    border: 2px solid var(--ugo-black) !important;
-    padding: 15px !important;
-    vertical-align: middle !important; /* 讓圖片和文字垂直置中 */
-    text-align: left; /* 預設靠左，Markdown 裡的 :---: 會覆蓋這個 */
-}
-
-/* 修正表格內的圖片 */
-td img {
-    display: block;
-    margin: 0 auto !important; /* 表格裡的圖片強制置中 */
-    box-shadow: none !important; /* 表格裡的小圖不要陰影，太亂了 */
-    border: none !important; /* 去掉圖片邊框，因為表格已經有框了 */
-}
-
-/* 修正表格內的連結按鈕 */
-td a {
-    font-weight: bold;
-    color: var(--ugo-red) !important;
-    text-decoration: none !important;
-}
-
-td a:hover {
-    background-color: var(--ugo-red) !important;
-    color: white !important;
-}
-/* 強制修復表格內的連結按鈕 */
-table td a.internal-link,
-table td a {
+/* 4. 強制修復連結按鈕 (置中 + 黑框) */
+/* 我們用非常具體的選擇器來確保覆蓋 */
+table td a,
+.landing-page td a,
+a.internal-link {
     display: inline-block !important;
-    padding: 4px 8px !important;
-    margin-bottom: 2px !important;
-    background-color: #fff !important; /* 白底 */
-    border: 2px solid var(--ugo-black) !important; /* 黑框 */
-    color: var(--ugo-black) !important; /* 黑字 */
+    margin: 4px auto !important;      /* 上下留白，左右自動置中 */
+    padding: 5px 10px !important;
+    background-color: #fff !important;
+    border: 2px solid var(--ugo-black) !important;
+    color: var(--ugo-black) !important;
     text-decoration: none !important;
     font-weight: bold !important;
     box-shadow: 2px 2px 0px rgba(0,0,0,0.1) !important;
     transition: all 0.1s !important;
 }
 
-/* 滑鼠移過去變紅 */
-table td a:hover {
+/* 按鈕滑鼠互動 */
+table td a:hover,
+.landing-page td a:hover {
     background-color: var(--ugo-red) !important;
     color: white !important;
-    transform: translate(1px, 1px) !important;
+    transform: translate(2px, 2px) !important;
     box-shadow: 1px 1px 0px black !important;
 }
-/* 強制大廳的三欄表格內容置中 */
-.landing-page td {
-    text-align: center !important;
-    vertical-align: top !important;
-}
 
-/* 確保表格內的 span 標籤（那些紅底白字的 Tag）也是置中的 */
-.landing-page td span {
-    display: inline-block;
-    margin: 2px auto;
-}
-
-/* 確保表格內的按鈕也是置中的 */
-.landing-page td a {
-    display: inline-block;
-    margin: 10px auto;
-}
-/* 強制表格內容完全置中 */
-.landing-page td {
-    text-align: center !important;
-    vertical-align: middle !important;
-}
-
-/* 確保按鈕不會飄移 */
-.landing-page td a {
-    display: inline-block !important;
-    margin: 5px auto !important;
-    text-align: center !important;
+/* 5. 強制圖片大小與置中 */
+td img {
+    display: block !important;
+    margin: 0 auto !important;
+    width: 50px !important;  /* 強制統一大小，解決 !50 失效問題 */
+    height: auto !important;
 }
