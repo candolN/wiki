@@ -9,16 +9,22 @@
  >  * <span class="breathing-red">**代號/綽號：** Lok</span>
  >  * <span class="breathing-red">**身份：** ???</span>
  >  * <span class="breathing-red">**相關人物：** [[zh/Damned Knife/Characters/Kolautte\|Kolautte]] | 兄弟</span>
-
+<br>
 ## 簡介
 ---
-<span class="breathing-red">Kolautte的雙胞胎兄弟。</span>
+<div class="appear-slow">
+Kolautte的雙胞胎兄弟。
 
+</div>
 
 ## 已知情報
 ---
-<span class="breathing-red">Kolautte說他是一個安靜的小孩，別人都在玩的時候他就抱著本書在旁邊看，但其實根本就只是假正經，稍稍逗一下就忘記自己本來要幹嘛加進來一起玩了。
-他還是個愛哭鬼，明明就是件小事或是俗套的故事卻會掉眼淚，然後嘴硬自己才沒有哭。</span>
+<div class="appear-slow">
+Kolautte說他是一個安靜的小孩，別人都在玩的時候他就抱著本書在旁邊看，但其實根本就只是假正經，稍稍逗一下就忘記自己本來要幹嘛加進來一起玩了。
+他還是個愛哭鬼，明明就是件小事或是俗套的故事卻會掉眼淚，然後嘴硬自己才沒有哭。
+
+</div>
+
 
 ## 軼事
 ---
@@ -31,4 +37,4 @@
 
 
 
-#角色
+#角色 #死刀子

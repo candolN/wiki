@@ -9,11 +9,11 @@
  >  * **代號/綽號：** Kol、死刀子
  >  * **身份：** 傭兵
  >  * **相關人物：** [[zh/Damned Knife/Characters/Jevart\|Jevart]] | 同夥、[[zh/Damned Knife/Characters/Kol's son\|Kol的兒子]] | 兒子、[[zh/Damned Knife/Characters/Lokautte\|Lokautte]] | 兄弟
-
+<br>
 ## 簡介
 ---
 本作男主。性格冷漠偏執、靠手法殘暴出名的傢伙。
-
+<br>
 ## 已知情報
 ---
 > [!abstract] **個人特質**
@@ -43,4 +43,4 @@
 ---
 
 
-#角色
+#角色 #死刀子

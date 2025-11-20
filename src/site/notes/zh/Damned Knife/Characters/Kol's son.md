@@ -9,12 +9,12 @@
  >  * **代號/綽號：** ???
  >  * **身份：** 小孩、<span style="background-color: black; color: black;" onmouseover="this.style.color='white'" onmouseout="this.style.color='black'">共犯</span>
  >  * **相關人物：** [[zh/Damned Knife/Characters/Kolautte\|Kolautte]] | 爸爸
-
+<br>
 ## 簡介
 ---
 [[zh/Damned Knife/Characters/Kolautte\|Kolautte]]的獨生子。
 很安靜聽話的小朋友，似乎缺乏正常人的觀念所以樣麼樣的情況都很淡定。
-
+<br>
 ## 已知情報
 ---
 > [!abstract] **個人特質**
@@ -36,4 +36,4 @@
 ---
 
 
-#角色 
+#角色 #死刀子
