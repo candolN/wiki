@@ -17,12 +17,7 @@ body {
     /* 核彈修正：直接覆蓋 Obsidian 底層的高亮變數 */
     --text-highlight-bg: rgba(var(--ugo-red-rgb), 0.3) !important;
 
-    /* 背景：點陣網格 */
-    background-color: var(--ugo-bg) !important;
-    background-image: radial-gradient(var(--ugo-dot) 20%, transparent 20%) !important;
-    background-position: 0 0, 10px 10px !important;
-    background-size: 20px 20px !important;
-    
+   
     /* 全局字體顏色 */
     --text-normal: var(--ugo-black) !important;
 }
@@ -134,55 +129,57 @@ html body .callout .callout-title {
     animation: appear-slow-anim 5s ease-in-out forwards;
 }
 
-/* ------------------------------------------------------------
-   PART 5: 頁面特定樣式 (Landing Page & Tables)
-   ------------------------------------------------------------ */
-/* 強制所有表格寬度填滿 */
-.landing-page table {
-    margin-left: auto !important;
-    margin-right: auto !important;
-    width: 100% !important;
-    max-width: 800px;
-    border: 2px solid var(--ugo-black) !important;
+
+/* ============================================================
+   PART 5: 表格全局美化 (GLOBAL TABLE STYLE)
+   ============================================================ */
+
+/* 強制所有表格都使用黑框風格，不只是 Landing Page */
+table {
+    margin: 20px auto !important; /* 上下留白，左右置中 */
+    width: 100% !important;       /* 寬度填滿 */
+    max-width: 100% !important;   /* 防止爆版 */
     border-collapse: collapse !important;
+    border: 2px solid var(--ugo-black) !important; /* 外框加粗 */
+    background-color: white !important; /* 背景純白，蓋住網點 */
 }
 
-/* 表頭：黑底白字 */
-.landing-page th {
+/* 表頭 (TH) */
+th {
     background-color: var(--ugo-black) !important;
     color: #ffffff !important;
     border: 2px solid var(--ugo-black) !important;
     text-align: center !important;
-    padding: 10px !important;
+    padding: 12px !important;
     font-weight: bold;
+    font-size: 1.1em;
 }
 
-/* 內容格：白底黑線 */
-.landing-page td {
+/* 內容格 (TD) */
+td {
     background-color: #ffffff !important;
     border: 2px solid var(--ugo-black) !important;
-    padding: 20px !important;
-    vertical-align: top !important;
-    text-align: center !important;
+    padding: 15px !important;
+    vertical-align: middle !important; /* 讓圖片和文字垂直置中 */
+    text-align: left; /* 預設靠左，Markdown 裡的 :---: 會覆蓋這個 */
 }
 
-/* 按鈕連結樣式 */
-.landing-page td a {
-    display: inline-block;
-    margin-top: 15px;
-    padding: 5px 10px;
-    background-color: #eee;
-    border: 2px solid var(--ugo-black);
-    text-decoration: none !important;
-    color: var(--ugo-black) !important;
+/* 修正表格內的圖片 */
+td img {
+    display: block;
+    margin: 0 auto !important; /* 表格裡的圖片強制置中 */
+    box-shadow: none !important; /* 表格裡的小圖不要陰影，太亂了 */
+    border: none !important; /* 去掉圖片邊框，因為表格已經有框了 */
+}
+
+/* 修正表格內的連結按鈕 */
+td a {
     font-weight: bold;
-    transition: all 0.1s;
+    color: var(--ugo-red) !important;
+    text-decoration: none !important;
 }
 
-/* 滑鼠移過去變紅 */
-.landing-page td a:hover {
+td a:hover {
     background-color: var(--ugo-red) !important;
     color: white !important;
-    transform: translate(2px, 2px);
-    box-shadow: 2px 2px 0px black;
 }
