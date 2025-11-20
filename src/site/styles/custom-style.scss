@@ -114,6 +114,60 @@ strong, b {
 @keyframes appear-slow-anim {
   from { opacity: 0; }
   to { opacity: 1; }
+
+/* ==============================================
+   大廳表格專用美化 (Ugomeemo Style)
+============================================== */
+
+/* 1. 讓表格本身置中，並加粗外框 */
+.landing-page table {
+    margin-left: auto !important;
+    margin-right: auto !important;
+    width: 100% !important;
+    max-width: 800px; /* 限制最大寬度，以免在電腦螢幕上太寬 */
+    border: 2px solid var(--ugo-black) !important;
+    border-collapse: collapse !important;
+}
+
+/* 2. 表頭：黑底白字 */
+.landing-page th {
+    background-color: var(--ugo-black) !important;
+    color: #ffffff !important;
+    border: 2px solid var(--ugo-black) !important;
+    text-align: center !important;
+    padding: 10px !important;
+    font-weight: bold;
+}
+
+/* 3. 內容格：白底黑線 */
+.landing-page td {
+    background-color: #ffffff !important;
+    border: 2px solid var(--ugo-black) !important;
+    padding: 20px !important;
+    vertical-align: top !important;
+    text-align: center !important; /* 強制內容文字置中 */
+}
+
+/* 4. 修復按鈕連結樣式 */
+.landing-page td a {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 5px 10px;
+    background-color: #eee;
+    border: 2px solid var(--ugo-black);
+    text-decoration: none !important;
+    color: var(--ugo-black) !important;
+    font-weight: bold;
+    transition: all 0.1s;
+}
+
+/* 滑鼠移過去變紅 */
+.landing-page td a:hover {
+    background-color: var(--ugo-red) !important;
+    color: white !important;
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0px black;
+}
 }
 
 .appear-slow {
