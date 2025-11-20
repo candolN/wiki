@@ -5,7 +5,7 @@
 
 <center>
 
-![[Pixel_Logo_Placeholder.png\|400]]
+
 
 <br>
 
