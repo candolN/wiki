@@ -26,4 +26,4 @@
 <br>
 <hr>
 
-[[zh/hall\|↩️ 返回大廳]]
+<center>[[zh/hall\|↩️ 返回大廳]]</center>
