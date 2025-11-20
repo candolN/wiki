@@ -3,7 +3,7 @@
 ---
 
 # Jevart
- (頭像)
+
  > [!info] **資訊欄**
  > * **全名：** <span style="filter: blur(5px); user-select: none;">已廢棄</span>
  >  * **代號/綽號：** 那個帶奇怪毛帽的中介、帽子男
