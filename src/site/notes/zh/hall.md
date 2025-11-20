@@ -45,4 +45,4 @@
 
 <br>
 <hr>
-<center>[[Home\|↩️ 返回語言選單]]</center>
+[[Home\|↩️ 返回語言選單]]
