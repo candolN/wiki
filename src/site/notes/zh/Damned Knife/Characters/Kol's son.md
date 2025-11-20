@@ -3,7 +3,7 @@
 ---
 
 # Kol的兒子
- (頭像)
+
  > [!info] **資訊欄**
  > * **全名：** <span style="background-color: black; color: black;" onmouseover="this.style.color='white'" onmouseout="this.style.color='black'">有名字，只是Kol從來沒有喊過</span>
  >  * **代號/綽號：** ???
