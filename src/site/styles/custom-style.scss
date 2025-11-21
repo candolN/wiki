@@ -222,3 +222,24 @@ h1 span.image-embed, h2 span.image-embed {
     display: inline-block !important;
     height: auto !important;           /* 容器高度自動 */
 }
+
+/* ==============================================
+   PART 7: LOCKED CONTENT (未開放內容鎖定)
+   ============================================== */
+
+/* 被標記為 .locked 的連結 */
+a.internal-link.locked,
+.locked a {
+    pointer-events: none; /* 禁止點擊 */
+    cursor: not-allowed;  /* 滑鼠變成禁止符號 */
+    opacity: 0.5;         /* 變半透明 */
+    position: relative;
+    text-decoration: line-through !important; /* 刪除線 */
+}
+
+/* 加上一個小鎖頭圖示 */
+a.internal-link.locked::after,
+.locked a::after {
+    content: " 🔒";
+    font-size: 0.8em;
+}
