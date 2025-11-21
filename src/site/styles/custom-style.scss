@@ -244,52 +244,52 @@ a.internal-link.locked::after,
     font-size: 0.8em;
 }
 /* ============================================================
-   PART 8: GIF 與特殊圖片樣式修正 (Special Image Overrides)
+   PART 8: 檔名觸發樣式修正 (Filename Trigger Fix)
+   說明：不再依賴 |icon 語法，改為偵測檔名關鍵字
    ============================================================ */
 
 /* ------------------------------------------------------------
-   模式 A：行內小圖示 (Inline Icon)
-   用法：![[image.gif|icon]]
-   效果：無框、無陰影、跟文字一樣大、不換行
+   模式 A：行內小圖示 (只要檔名包含 "icon-")
+   例如：![[icon-flag.png]]
    ------------------------------------------------------------ */
-img[alt*="icon"] {
-    display: inline-block !important;    /* 強制併入文字行內 */
+img[src*="icon-"] {
+    display: inline-block !important;       /* 併入文字行內 */
     vertical-align: text-bottom !important; /* 對齊文字底部 */
-    border: none !important;             /* 移除黑框 */
-    box-shadow: none !important;         /* 移除陰影 */
-    background: transparent !important;  /* 移除背景 */
-    margin: 0 4px !important;            /* 左右留一點點小空隙 */
-    width: auto !important;              /* 寬度自動 */
-    height: 1.3em !important;            /* 高度鎖定為字體的 1.3 倍 (約等於文字大小) */
-    min-width: unset !important;         /* 防止被其他樣式干擾 */
+    
+    /* 強制重置樣式 */
+    border: none !important;                /* 移除黑框 */
+    box-shadow: none !important;            /* 移除陰影 */
+    background: transparent !important;     
+    border-radius: 0 !important;
+    
+    /* 尺寸控制 */
+    width: auto !important;
+    height: 1.3em !important;               /* 高度鎖定為字體的 1.3 倍 */
+    margin: 0 4px !important;               /* 左右留白 */
+    min-width: unset !important;
 }
 
 /* ------------------------------------------------------------
-   模式 B：純淨圖片 (Clean Image)
-   用法：![[image.gif|clean]] 
-   效果：無框、無陰影、但是保留原圖尺寸 (適合展示用 GIF)
+   模式 B：純淨展示圖 (只要檔名包含 "clean-")
+   例如：![[clean-map.png]]
+   用於：不需要黑框的大圖、GIF、表格內的展示圖
    ------------------------------------------------------------ */
-img[alt*="clean"] {
-    border: none !important;             /* 移除黑框 */
-    box-shadow: none !important;         /* 移除陰影 */
+img[src*="clean-"] {
+    border: none !important;                /* 移除黑框 */
+    box-shadow: none !important;            /* 移除陰影 */
     background: transparent !important;
-    /* 注意：這裡不強制 display，讓它保持原本區塊或行內屬性 */
+    display: inline-block !important;
+    margin: 10px auto !important;           /* 保持置中 */
 }
 
 /* ------------------------------------------------------------
    表格內的特殊修正 (Table Overrides)
-   原本 PART 5 強制表格圖片 50px，這裡要「解鎖」上述兩種圖片
+   確保這些特殊圖片在表格裡不會被 PART 5 的 50px 限制住
    ------------------------------------------------------------ */
-table td img[alt*="icon"],
-table td img[alt*="clean"],
-.landing-page td img[alt*="icon"],
-.landing-page td img[alt*="clean"] {
-    width: auto !important;       /* 解除 50px 寬度限制 */
-    max-width: 100% !important;   /* 避免撐爆表格 */
-}
-
-/* 如果想要指定大小，例如 ![[gif|clean|200]]
-   這行確保手動指定的大小生效 */
-img[width] {
-    width: auto !important; /* 讓 HTML 屬性控制 */
+table td img[src*="icon-"],
+table td img[src*="clean-"],
+.landing-page td img[src*="icon-"],
+.landing-page td img[src*="clean-"] {
+    width: auto !important;      /* 解鎖寬度 */
+    max-width: 100% !important;  /* 防止撐爆 */
 }
