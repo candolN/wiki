@@ -2,7 +2,7 @@
 {"dg-publish":true,"permalink":"/Home/","tags":["gardenEntry"]}
 ---
 
-![wcxthu8i9tme1.gif](/img/user/wcxthu8i9tme1.gif)
+![png/duo.gif](/img/user/png/duo.gif)
 <center>
 
 
