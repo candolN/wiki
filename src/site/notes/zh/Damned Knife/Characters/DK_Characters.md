@@ -2,7 +2,7 @@
 {"dg-publish":true,"permalink":"/zh/Damned Knife/Characters/DK_Characters/"}
 ---
 
-#  ![png/ui/ui_c.png|32](/img/user/png/ui/ui_c.png)中立區人口檔案 (Census Data)
+#  ![png/ui/ui_character.png|32](/img/user/png/ui/ui_character.png)中立區人口檔案 (Census Data)
 
 > [!summary] **檔案室備註**
 > 本名單收錄中立區的已知活動人員。
