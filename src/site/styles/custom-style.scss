@@ -193,25 +193,32 @@ td img {
 }
 
 /* ============================================================
-   PART 6: 標題與 UI Icon 特別修正 (Header Icon Fix)
+   PART 6: 標題與 UI Icon 特別修正 (Header Icon Fix) - V2修正版
    ============================================================ */
 
 /* 針對 H1 ~ H6 標題內部的所有圖片進行樣式重置 */
 h1 img, h2 img, h3 img, h4 img, h5 img, h6 img {
-    display: inline-block !important;  /* 關鍵：改回行內區塊，讓它能跟文字排在同一行 */
-    vertical-align: middle !important; /* 關鍵：讓圖片跟文字垂直方向置中對齊 */
+    display: inline-block !important;  /* 保持與文字同行 */
+    vertical-align: bottom !important; /* 底部對齊，通常比 middle 看起來更穩 */
     
-    /* 移除全域圖片樣式 */
-    border: none !important;           /* 去掉黑框 */
-    box-shadow: none !important;       /* 去掉陰影 */
-    background: transparent !important;/* 確保背景透明 */
+    /* --- 關鍵修正 --- */
+    /* 強制限制圖片高度，讓它永遠不會超過標題文字太多 */
+    /* 1.5em 代表「當下字體大小的 1.5 倍」，這通常是 icon 最舒服的大小 */
+    height: 1.5em !important;          
+    width: auto !important;            /* 寬度自動計算，保持圖片比例不變形 */
+    /* ---------------- */
+
+    /* 移除全域圖片樣式與陰影 */
+    border: none !important;
+    box-shadow: none !important;
+    background: transparent !important;
     
     /* 調整間距 */
-    margin: 0 8px 0 0 !important;      /* 取消原本的 auto 置中，只在圖片右側留點空隙 */
-    width: auto !important;            /* 避免被強制拉伸，或者你可以指定具體 px */
+    margin: 0 10px 0 0 !important;     /* 圖片右邊留點空隙 */
 }
 
-/* 如果你的網頁發布平台會把圖片包在 span 裡 (某些生成器會這樣)，可能需要這個補丁 */
+/* 針對某些生成器把圖片包在 span 的修正 */
 h1 span.image-embed, h2 span.image-embed {
     display: inline-block !important;
+    height: auto !important;           /* 容器高度自動 */
 }
