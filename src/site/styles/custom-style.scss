@@ -50,6 +50,8 @@ strong, b {
     color: var(--ugo-red) !important;
 }
 
+
+
 /* ------------------------------------------------------------
    PART 3: Callout 框框 (Ugomeemo Style)
    ------------------------------------------------------------ */
@@ -189,23 +191,27 @@ td img {
     width: 50px !important;  /* 強制統一大小，解決 !50 失效問題 */
     height: auto !important;
 }
-/* ==============================================
-   LOCKED CONTENT (未開放內容鎖定)
-   ============================================== */
 
-/* 被標記為 .locked 的連結 */
-a.internal-link.locked,
-.locked a {
-    pointer-events: none; /* 禁止點擊 */
-    cursor: not-allowed;  /* 滑鼠變成禁止符號 */
-    opacity: 0.5;         /* 變半透明 */
-    position: relative;
-    text-decoration: line-through !important; /* 刪除線 */
+/* ============================================================
+   PART 6: 標題與 UI Icon 特別修正 (Header Icon Fix)
+   ============================================================ */
+
+/* 針對 H1 ~ H6 標題內部的所有圖片進行樣式重置 */
+h1 img, h2 img, h3 img, h4 img, h5 img, h6 img {
+    display: inline-block !important;  /* 關鍵：改回行內區塊，讓它能跟文字排在同一行 */
+    vertical-align: middle !important; /* 關鍵：讓圖片跟文字垂直方向置中對齊 */
+    
+    /* 移除全域圖片樣式 */
+    border: none !important;           /* 去掉黑框 */
+    box-shadow: none !important;       /* 去掉陰影 */
+    background: transparent !important;/* 確保背景透明 */
+    
+    /* 調整間距 */
+    margin: 0 8px 0 0 !important;      /* 取消原本的 auto 置中，只在圖片右側留點空隙 */
+    width: auto !important;            /* 避免被強制拉伸，或者你可以指定具體 px */
 }
 
-/* 加上一個小鎖頭圖示 */
-a.internal-link.locked::after,
-.locked a::after {
-    content: " 🔒";
-    font-size: 0.8em;
+/* 如果你的網頁發布平台會把圖片包在 span 裡 (某些生成器會這樣)，可能需要這個補丁 */
+h1 span.image-embed, h2 span.image-embed {
+    display: inline-block !important;
 }
