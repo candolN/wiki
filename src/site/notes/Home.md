@@ -2,7 +2,7 @@
 {"dg-publish":true,"permalink":"/Home/","tags":["gardenEntry"]}
 ---
 
-<img src="https://raw.githubusercontent.com/candolN/wiki/main/src/site/img/user/png/duo.gif" width="50" alt="duo">
+
 <center>
 
 
