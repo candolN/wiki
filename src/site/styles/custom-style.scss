@@ -310,99 +310,81 @@ img[src*="clean-"] {
 }
 
 /* ============================================================
-   PART 8 (FINAL V4): Icon 與 GIF 終極相容版
-   說明：針對手機 GIF 不動問題進行「核彈級」重置
+   PART 8 (FINAL V5): 鐵腕鎖死版 (Hard Cap Edition)
+   說明：強制壓制表格圖片大小，並讓 GIF 回歸原始渲染
    ============================================================ */
 
 /* ------------------------------------------------------------
-   1. 內文中的 Icon (icon-)
-   說明：保持 1.8em 大小，像素風，垂直置中
+   1. 表格內的 Icon (Table Priority) - 最優先執行！
+   說明：不管是 icon- 還是 clean-，只要在表格裡，一律鎖死 50px
    ------------------------------------------------------------ */
-img[src*="icon-"] {
-    display: inline-block !important;
-    vertical-align: middle !important; 
-    border: none !important;
-    box-shadow: none !important;
-    background: transparent !important;
-    
-    height: 1.8em !important;          
-    width: auto !important;
-    margin: 0 5px !important;
-    min-width: 20px !important;
+html body table td img,
+html body .landing-page td img {
+    /* 如果檔名包含 icon-，強制鎖死大小 */
+    &[src*="icon-"] {
+        width: 50px !important;
+        max-width: 50px !important; /* 加這行：絕對不准變大 */
+        min-width: 0 !important;    /* 加這行：允許縮小 */
+        height: auto !important;
+        
+        display: block !important;
+        margin: 0 auto !important;
+        
+        border: none !important;
+        box-shadow: none !important;
+        background: transparent !important;
+    }
 }
 
 /* ------------------------------------------------------------
-   2. 標題內的 Icon (Header Protection)
-   說明：維持標題小圖示，不搶戲
+   2. 內文中的 Icon (Body Text)
+   說明：只在「非表格」的地方生效
+   ------------------------------------------------------------ */
+html body img[src*="icon-"] {
+    display: inline-block !important;
+    vertical-align: middle !important; 
+    
+    /* 這裡維持你要的大顆像素風 */
+    height: 1.8em !important; 
+    width: auto !important;
+    margin: 0 5px !important;
+    
+    border: none !important;
+    box-shadow: none !important;
+    background: transparent !important;
+}
+
+/* ------------------------------------------------------------
+   3. 標題內的 Icon (Header)
    ------------------------------------------------------------ */
 h1 img[src*="icon-"], h2 img[src*="icon-"], 
 h3 img[src*="icon-"], h4 img[src*="icon-"], 
 h5 img[src*="icon-"], h6 img[src*="icon-"] {
-    height: 1.5em !important;
+    height: 1.5em !important; /* 標題用小一點 */
     width: auto !important;
     vertical-align: bottom !important;
-    margin: 0 10px 0 0 !important;
 }
 
 /* ------------------------------------------------------------
-   3. 表格內的 Icon (Table Protection)
-   說明：鎖定 50px，保持表格整齊
+   4. GIF 救命區 (GIF Reset)
+   說明：針對手機，徹底移除所有像素化設定
    ------------------------------------------------------------ */
-table td img[src*="icon-"],
-.landing-page td img[src*="icon-"] {
-    width: 50px !important;            
-    height: auto !important;
-    display: block !important;
-    margin: 0 auto !important;
-    border: none !important;
-    box-shadow: none !important;
-    min-width: 50px !important;
-}
-
-/* ------------------------------------------------------------
-   4. Clean 模式 (原圖展示)
-   ------------------------------------------------------------ */
-img[src*="clean-"] {
+img[src*=".gif"] {
+    /* 外觀重置 */
     border: none !important;
     box-shadow: none !important;
     background: transparent !important;
-}
-
-/* ------------------------------------------------------------
-   5. GIF 絕對救命區 (Mobile GIF Resurrection)
-   說明：權重拉到最高，強制重置所有渲染屬性
-   ------------------------------------------------------------ */
-/* 使用 html body 開頭，確保權重碾壓全域設定 */
-html body img[src*=".gif"] {
-    /* 1. 外觀重置：去框、去陰影 */
-    border: none !important;
-    box-shadow: none !important;
-    background: transparent !important;
-    border-radius: 0 !important;
-
-    /* 2. 渲染重置：這是手機不動的關鍵！ */
-    /* 強制告訴瀏覽器：「不要像素化！用最普通的方式畫這張圖！」 */
-    image-rendering: auto !important; 
-    image-rendering: -webkit-optimize-contrast !important;
+    
+    /* 關鍵：針對 GIF，我們「取消」全域的像素化設定 */
+    /* 不要用 auto，改用 unset 或 initial 試試看，這對某些瀏覽器更有效 */
     image-rendering: unset !important;
-
-    /* 3. 動畫重置：防止全域 CSS 的轉場效果干擾 GIF 播放 */
-    transition: none !important;
-    animation: none !important;
-    transform: none !important;
-
-    /* 4. 尺寸重置：防止消失或變形 */
-    width: auto !important;    /* 確保顯示原圖寬度 */
-    height: auto !important;
+    image-rendering: initial !important; 
+    
+    /* 確保寬度正常 */
     max-width: 100% !important;
-    display: inline-block !important;
-    opacity: 1 !important;     /* 確保不透明 */
-}
-
-/* 手機版特別加強 */
-@media screen and (max-width: 768px) {
-    html body img[src*=".gif"] {
-        image-rendering: auto !important;
-        will-change: auto !important; /* 釋放記憶體 */
-    }
+    height: auto !important;
+    
+    /* 防止手機為了優化效能而暫停 GIF */
+    will-change: auto !important;
+    transform: none !important;
 }
