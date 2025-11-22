@@ -309,23 +309,93 @@ img[src*="clean-"] {
     /* 不強制設定大小，由 Markdown 語法或原圖決定 */
 }
 
+/* ============================================================
+   PART 8 (FINAL V3): 安全版 Icon 與 GIF 整合修復
+   說明：修復手機 GIF 消失問題，調整 Icon 為適中大小
+   ============================================================ */
+
 /* ------------------------------------------------------------
-   5. GIF 保護網 (終極修復版)
+   1. 內文中的 Icon (icon-)
+   修正：大小降為 1.8em，避免電腦版過大
    ------------------------------------------------------------ */
-/* 注意這裡改成了 *= (包含)，而不是 $= (結尾) */
-/* 這樣就算網址變成 image.gif?v=123 也能被抓到 */
+img[src*="icon-"] {
+    display: inline-block !important;
+    vertical-align: middle !important; 
+    border: none !important;
+    box-shadow: none !important;
+    background: transparent !important;
+    
+    /* 大小調整：1.8em 是最安全的甜蜜點 */
+    height: 1.8em !important;          
+    width: auto !important;
+    margin: 0 5px !important;
+    min-width: 20px !important; /* 防止被壓縮到不見 */
+}
+
+/* ------------------------------------------------------------
+   2. 標題內的 Icon (Header Protection)
+   修正：維持精緻小圖，權重加強
+   ------------------------------------------------------------ */
+h1 img[src*="icon-"], h2 img[src*="icon-"], 
+h3 img[src*="icon-"], h4 img[src*="icon-"], 
+h5 img[src*="icon-"], h6 img[src*="icon-"] {
+    height: 1.5em !important;
+    width: auto !important;
+    vertical-align: bottom !important;
+    margin: 0 10px 0 0 !important;
+}
+
+/* ------------------------------------------------------------
+   3. 表格內的 Icon (Table Protection)
+   修正：強制鎖定 50px，絕對不讓大圖規則入侵表格
+   ------------------------------------------------------------ */
+table td img[src*="icon-"],
+.landing-page td img[src*="icon-"] {
+    width: 50px !important;            
+    height: auto !important;
+    display: block !important;
+    margin: 0 auto !important;
+    border: none !important;
+    box-shadow: none !important;
+    min-width: 50px !important; /* 確保不會消失 */
+}
+
+/* ------------------------------------------------------------
+   4. Clean 模式 (原圖展示)
+   ------------------------------------------------------------ */
+img[src*="clean-"] {
+    border: none !important;
+    box-shadow: none !important;
+    background: transparent !important;
+}
+
+/* ------------------------------------------------------------
+   5. GIF 終極急救包 (Mobile GIF Rescue)
+   修正：移除 transform，強制 auto 渲染
+   ------------------------------------------------------------ */
+/* 只要網址包含 .gif (不管在結尾還是中間) */
 img[src*=".gif"] {
     border: none !important;
     box-shadow: none !important;
     
-    /* 強制手機使用最省力的渲染模式 */
+    /* 關鍵：強制改回「自動」渲染，手機才會願意播放 GIF */
     image-rendering: auto !important; 
-    image-rendering: -webkit-optimize-contrast !important; /* 針對 iOS 的額外參數 */
     
-    /* 移除可能導致某些舊手機崩潰的 3D 加速 hack */
-    /* transform: translateZ(0);  <-- 這行有時候反而是地雷，我們先拿掉 */
+    /* 移除之前導致消失的 transform: translateZ */
+    transform: none !important; 
+    will-change: auto !important;
     
-    /* 確保它不會被隨意縮放導致運算量過大 */
+    /* 確保有寬度 */
+    display: inline-block !important;
     max-width: 100% !important;
-    height: auto !important;
+}
+
+/* ------------------------------------------------------------
+   6. 針對手機版的額外保險 (Mobile Only)
+   ------------------------------------------------------------ */
+@media screen and (max-width: 768px) {
+    img[src*=".gif"] {
+        /* 再次強調，手機上絕對不要像素化 GIF */
+        image-rendering: auto !important; 
+    }
 }
