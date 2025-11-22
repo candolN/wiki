@@ -42,7 +42,8 @@
 
 | **![png/ui/icon-ui_prohibit.png](/img/user/png/ui/icon-ui_prohibit.png)封鎖區域 (Restricted Area)**                                                                                                                                                                                                                                                                                          |
 | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **中立區外部 (Outer Sector)**<br><br>*(這些地點目前無法進入，或是屬於過去的紀錄)*<br><br><span class="locked"> [[Frontier_Woods\|邊境森林]] </span>&nbsp; <span class="locked"> [[Forest_Lake\|森林湖]]</span><br><span class="locked"> [[Hunters_Cabin\|獵人小屋]]</span> &nbsp; <span class="locked"> [[Small_Garden\|小花園]]</span><br><span class="locked"> [[Dead_Drop\|死信箱]]</span>|<br>
+| **中立區外部 (Outer Sector)**<br><br>*(這些地點目前無法進入，或是屬於過去的紀錄)*<br><br><span class="locked"> [[Frontier_Woods\|邊境森林]] </span>&nbsp; <span class="locked"> [[Forest_Lake\|森林湖]]</span><br><span class="locked"> [[Hunters_Cabin\|獵人小屋]]</span> &nbsp; <span class="locked"> [[Small_Garden\|小花園]]</span><br><span class="locked"> [[Dead_Drop\|死信箱]]</span>|
+
 <hr>
 
 [[zh/Damned Knife/DK_Hub\|↩️ 返回中立區導覽]]
