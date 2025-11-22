@@ -8,7 +8,7 @@
  > * **全名：** <span style="background-color: black; color: black;" onmouseover="this.style.color='white'" onmouseout="this.style.color='black'">有名字，只是Kol從來沒有喊過</span>
  >  * **代號/綽號：** ???
  >  * **身份：** 小孩、<span style="background-color: black; color: black;" onmouseover="this.style.color='white'" onmouseout="this.style.color='black'">共犯</span>
- >  * **相關人物：** [[zh/Damned Knife/Characters/Kolautte\|Kolautte]] | 爸爸
+ >  * **相關人物：** ![png/ui/icon-c_kol.png](/img/user/png/ui/icon-c_kol.png)[[zh/Damned Knife/Characters/Kolautte\|Kolautte]] | 爸爸
 <br>
 ## 簡介
 ---

@@ -8,7 +8,7 @@
  > * **全名：** Kolautte Enfez
  >  * **代號/綽號：** Kol、死刀子
  >  * **身份：** 傭兵
- >  * **相關人物：** ![png/icon/icon-jevart.png](/img/user/png/icon/icon-jevart.png)[[zh/Damned Knife/Characters/Jevart\|Jevart]] | 同夥、![png/icon/icon-kamo.png](/img/user/png/icon/icon-kamo.png)[[zh/Damned Knife/Characters/Kol's son\|Kol的兒子]] | 兒子、![png/icon/icon-unknown.png](/img/user/png/icon/icon-unknown.png)[[zh/Damned Knife/Characters/Lokautte\|Lokautte]] | 兄弟
+ >  * **相關人物：** ![png/ui/icon-c_jevart.png](/img/user/png/ui/icon-c_jevart.png)[[zh/Damned Knife/Characters/Jevart\|Jevart]] | 同夥、![png/ui/icon-c_kamo.png](/img/user/png/ui/icon-c_kamo.png)[[zh/Damned Knife/Characters/Kol's son\|Kol的兒子]] | 兒子、![png/ui/icon-c_unknown.png](/img/user/png/ui/icon-c_unknown.png)[[zh/Damned Knife/Characters/Lokautte\|Lokautte]] | 兄弟
 <br>
 ## 簡介
 ---

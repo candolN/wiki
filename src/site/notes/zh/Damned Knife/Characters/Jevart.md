@@ -8,7 +8,7 @@
  > * **全名：** <span style="filter: blur(5px); user-select: none;">已廢棄</span>
  >  * **代號/綽號：** 那個帶奇怪毛帽的中介、帽子男
  >  * **身份：** 中介
- >  * **相關人物：** [[zh/Damned Knife/Characters/Kolautte\|Kolautte]] | 同夥
+ >  * **相關人物：** ![png/ui/icon-c_kol.png](/img/user/png/ui/icon-c_kol.png)[[zh/Damned Knife/Characters/Kolautte\|Kolautte]] | 同夥
 <br>
 ## 簡介
 ---
