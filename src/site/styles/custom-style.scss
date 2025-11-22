@@ -293,3 +293,38 @@ img[src*=".gif"], img[src*=".GIF"] {
     /* 移除過多的 GPU hack，有時候反而是負擔 */
     transform: none !important;
 }
+/* ============================================================
+   PART 10: 星星評分系統 (Star Rating System Fix)
+   說明：讓檔名包含 star- 的圖片橫向排列，去除黑框陰影
+   ============================================================ */
+
+/* 使用 html body 提升權重，確保壓過全域設定 */
+html body img[src*="star-"] {
+    /* 1. 關鍵：強制變成「行內元素」，讓它們可以並排 */
+    display: inline-block !important;
+    
+    /* 2. 去除干擾：拿掉討厭的黑框和陰影 */
+    border: none !important;
+    box-shadow: none !important;
+    background: transparent !important;
+    
+    /* 3. 尺寸：設定跟文字差不多大 */
+    height: 1.2em !important; 
+    width: auto !important;
+    
+    /* 4. 間距：星星之間緊湊一點 */
+    margin: 0 1px !important;
+    
+    /* 5. 對齊：微調垂直位置，讓它不要飄起來 */
+    vertical-align: text-bottom !important;
+    
+    /* 6. 防止其他干擾 */
+    min-width: unset !important;
+    max-width: none !important;
+}
+
+/* 針對某些網頁生成器會把圖片包在 span 裡的修正 */
+span.image-embed:has(img[src*="star-"]) {
+    display: inline-block !important;
+    width: auto !important;
+}
