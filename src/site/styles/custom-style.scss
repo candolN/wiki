@@ -310,13 +310,13 @@ img[src*="clean-"] {
 }
 
 /* ============================================================
-   PART 8 (FINAL V3): 安全版 Icon 與 GIF 整合修復
-   說明：修復手機 GIF 消失問題，調整 Icon 為適中大小
+   PART 8 (FINAL V4): Icon 與 GIF 終極相容版
+   說明：針對手機 GIF 不動問題進行「核彈級」重置
    ============================================================ */
 
 /* ------------------------------------------------------------
    1. 內文中的 Icon (icon-)
-   修正：大小降為 1.8em，避免電腦版過大
+   說明：保持 1.8em 大小，像素風，垂直置中
    ------------------------------------------------------------ */
 img[src*="icon-"] {
     display: inline-block !important;
@@ -325,16 +325,15 @@ img[src*="icon-"] {
     box-shadow: none !important;
     background: transparent !important;
     
-    /* 大小調整：1.8em 是最安全的甜蜜點 */
     height: 1.8em !important;          
     width: auto !important;
     margin: 0 5px !important;
-    min-width: 20px !important; /* 防止被壓縮到不見 */
+    min-width: 20px !important;
 }
 
 /* ------------------------------------------------------------
    2. 標題內的 Icon (Header Protection)
-   修正：維持精緻小圖，權重加強
+   說明：維持標題小圖示，不搶戲
    ------------------------------------------------------------ */
 h1 img[src*="icon-"], h2 img[src*="icon-"], 
 h3 img[src*="icon-"], h4 img[src*="icon-"], 
@@ -347,7 +346,7 @@ h5 img[src*="icon-"], h6 img[src*="icon-"] {
 
 /* ------------------------------------------------------------
    3. 表格內的 Icon (Table Protection)
-   修正：強制鎖定 50px，絕對不讓大圖規則入侵表格
+   說明：鎖定 50px，保持表格整齊
    ------------------------------------------------------------ */
 table td img[src*="icon-"],
 .landing-page td img[src*="icon-"] {
@@ -357,7 +356,7 @@ table td img[src*="icon-"],
     margin: 0 auto !important;
     border: none !important;
     box-shadow: none !important;
-    min-width: 50px !important; /* 確保不會消失 */
+    min-width: 50px !important;
 }
 
 /* ------------------------------------------------------------
@@ -370,32 +369,40 @@ img[src*="clean-"] {
 }
 
 /* ------------------------------------------------------------
-   5. GIF 終極急救包 (Mobile GIF Rescue)
-   修正：移除 transform，強制 auto 渲染
+   5. GIF 絕對救命區 (Mobile GIF Resurrection)
+   說明：權重拉到最高，強制重置所有渲染屬性
    ------------------------------------------------------------ */
-/* 只要網址包含 .gif (不管在結尾還是中間) */
-img[src*=".gif"] {
+/* 使用 html body 開頭，確保權重碾壓全域設定 */
+html body img[src*=".gif"] {
+    /* 1. 外觀重置：去框、去陰影 */
     border: none !important;
     box-shadow: none !important;
-    
-    /* 關鍵：強制改回「自動」渲染，手機才會願意播放 GIF */
+    background: transparent !important;
+    border-radius: 0 !important;
+
+    /* 2. 渲染重置：這是手機不動的關鍵！ */
+    /* 強制告訴瀏覽器：「不要像素化！用最普通的方式畫這張圖！」 */
     image-rendering: auto !important; 
-    
-    /* 移除之前導致消失的 transform: translateZ */
-    transform: none !important; 
-    will-change: auto !important;
-    
-    /* 確保有寬度 */
-    display: inline-block !important;
+    image-rendering: -webkit-optimize-contrast !important;
+    image-rendering: unset !important;
+
+    /* 3. 動畫重置：防止全域 CSS 的轉場效果干擾 GIF 播放 */
+    transition: none !important;
+    animation: none !important;
+    transform: none !important;
+
+    /* 4. 尺寸重置：防止消失或變形 */
+    width: auto !important;    /* 確保顯示原圖寬度 */
+    height: auto !important;
     max-width: 100% !important;
+    display: inline-block !important;
+    opacity: 1 !important;     /* 確保不透明 */
 }
 
-/* ------------------------------------------------------------
-   6. 針對手機版的額外保險 (Mobile Only)
-   ------------------------------------------------------------ */
+/* 手機版特別加強 */
 @media screen and (max-width: 768px) {
-    img[src*=".gif"] {
-        /* 再次強調，手機上絕對不要像素化 GIF */
-        image-rendering: auto !important; 
+    html body img[src*=".gif"] {
+        image-rendering: auto !important;
+        will-change: auto !important; /* 釋放記憶體 */
     }
 }
