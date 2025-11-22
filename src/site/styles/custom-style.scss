@@ -1,9 +1,9 @@
 /* ============================================================
-   CANDOLN WIKI MASTER CSS (MOBILE FIXED VERSION)
+   CANDOLN WIKI MASTER CSS (MOBILE FIXED VERSION V6)
    ============================================================ */
 
 /* ------------------------------------------------------------
-   PART 1: 變數與基礎設定 (Base Setup)
+   PART 1: 變數與基礎設定
    ------------------------------------------------------------ */
 body {
     --ugo-red-rgb: 214, 40, 40;
@@ -15,30 +15,43 @@ body {
     --text-highlight-bg: rgba(var(--ugo-red-rgb), 0.3) !important;
     --text-normal: var(--ugo-black) !important;
 }
+
 /* ------------------------------------------------------------
-   PART 2: 基礎元件 (Images, Bold, Highlights)
+   PART 2: 基礎元件 (Images)
    ------------------------------------------------------------ */
-/* 1. 全局預設：安全第一 (Safe Mode) */
+/* 1. 全局圖片預設 (Safe Mode) */
 img {
-    /* 讓所有圖片預設都是平滑的，這是 GIF 能動的絕對前提 */
-    image-rendering: auto; 
-    image-rendering: -webkit-optimize-contrast;
-    
-    /* 基礎外觀 */
+    image-rendering: auto; /* 預設平滑 */
     border: 2px solid var(--ugo-black);
     box-shadow: 4px 4px 0px rgba(0,0,0,0.2);
-    display: block;
-    margin: 10px auto;
+    
+    /* 🔴 關鍵修正：改回 inline-block，避免手機誤判 */
+    display: inline-block; 
+    max-width: 100%;
+    height: auto;
+    
+    /* 保持置中效果的替代方案 */
+    margin: 10px 0; 
 }
 
-/* 2. 指定像素化：只針對 PNG (DOL 風格核心) */
-/* 我們明確指定只有 .png 結尾的圖才像素化，絕對不碰 .gif */
-img[src*=".png"] {
+/* 為了讓 inline-block 的圖片也能置中，我們需要對圖片的父層動手腳 */
+/* 如果是在段落中的圖片，這行能確保它置中 */
+p:has(> img) {
+    text-align: center;
+}
+
+/* 2. 指定像素化：只針對 PNG (DOL 風格) */
+img[src*=".png"], img[src*=".PNG"] {
     image-rendering: pixelated;
     image-rendering: -moz-crisp-edges;
+    /* PNG 可以保持 block 屬性沒關係，因為它不會動 */
+    display: block; 
+    margin: 10px auto; 
 }
 
-/* 高亮筆修正 */
+/* ------------------------------------------------------------
+   PART 2.5: 文字樣式
+   ------------------------------------------------------------ */
 html body mark, 
 html body .cm-highlight,
 html body .markdown-rendered mark {
@@ -49,13 +62,12 @@ html body .markdown-rendered mark {
     box-shadow: none !important;
 }
 
-/* 粗體字變紅 */
 strong, b {
     color: var(--ugo-red) !important;
 }
 
 /* ------------------------------------------------------------
-   PART 3: Callout 框框 (Ugomeemo Style)
+   PART 3: Callout 框框
    ------------------------------------------------------------ */
 html body .callout,
 html body .callout[data-callout="info"] {
@@ -87,7 +99,7 @@ html body .callout .callout-title {
 }
 
 /* ------------------------------------------------------------
-   PART 4: 特效動畫 (Animations)
+   PART 4: 特效動畫
    ------------------------------------------------------------ */
 @keyframes shake-crazy {
     0% { transform: translate(2px, 1px) rotate(0deg); }
@@ -129,9 +141,9 @@ html body .callout .callout-title {
     animation: appear-slow-anim 5s ease-in-out forwards;
 }
 
-/* ============================================================
-   PART 5: 終極表格修復
-   ============================================================ */
+/* ------------------------------------------------------------
+   PART 5: 表格修復
+   ------------------------------------------------------------ */
 table {
     margin: 20px auto !important;
     width: 100% !important;
@@ -182,9 +194,9 @@ td img {
     height: auto !important;
 }
 
-/* ============================================================
-   PART 6: 標題與 UI Icon 特別修正
-   ============================================================ */
+/* ------------------------------------------------------------
+   PART 6: 標題與 UI Icon
+   ------------------------------------------------------------ */
 h1 img, h2 img, h3 img, h4 img, h5 img, h6 img {
     display: inline-block !important;
     vertical-align: bottom !important;
@@ -201,9 +213,9 @@ h1 span.image-embed, h2 span.image-embed {
     height: auto !important;
 }
 
-/* ==============================================
+/* ------------------------------------------------------------
    PART 7: LOCKED CONTENT
-   ============================================== */
+   ------------------------------------------------------------ */
 a.internal-link.locked,
 .locked a {
     pointer-events: none;
@@ -219,14 +231,11 @@ a.internal-link.locked::after,
     font-size: 0.8em;
 }
 
-/* ============================================================
-   PART 8 (FINAL V5 FIXED): 鐵腕鎖死版 (無巢狀語法錯誤版)
-   ============================================================ */
-
 /* ------------------------------------------------------------
-   1. 表格內的 Icon (Table Priority)
-   🔴 修正：拆除巢狀寫法 (&)，改為標準 CSS，確保手機讀得到
+   PART 8: 鐵腕修復版 (已修復語法錯誤)
    ------------------------------------------------------------ */
+
+/* 表格內 Icon */
 html body table td img[src*="icon-"],
 html body .landing-page td img[src*="icon-"] {
     width: 50px !important;
@@ -236,15 +245,12 @@ html body .landing-page td img[src*="icon-"] {
     display: block !important;
     margin: 0 auto !important;
     border: none !important;
-    box-shadow: none !important;
     background: transparent !important;
-    /* 表格內 Icon 不需要像素化，保持清晰 */
+    box-shadow: none !important;
     image-rendering: auto !important; 
 }
 
-/* ------------------------------------------------------------
-   2. 內文中的 Icon (Body Text)
-   ------------------------------------------------------------ */
+/* 內文 Icon */
 html body img[src*="icon-"] {
     display: inline-block !important;
     vertical-align: middle !important; 
@@ -256,29 +262,34 @@ html body img[src*="icon-"] {
     background: transparent !important;
 }
 
-/* ------------------------------------------------------------
-   3. 特殊規則：Clean 模式 (純淨原圖)
-   ------------------------------------------------------------ */
+/* Clean 模式 */
 img[src*="clean-"] {
     border: none !important;
     box-shadow: none !important;
     background: transparent !important;
-    image-rendering: auto !important; /* clean 模式也強制平滑 */
+    image-rendering: auto !important; 
 }
-/* ------------------------------------------------------------
-   4. GIF 最終救命區 (GIF Mobile Fix)
-   說明：極簡化處理，減少干擾
-   ------------------------------------------------------------ */
-img[src*=".gif"] {
-    /* 確保外觀乾淨 */
+
+/* 🔥 4. GIF 最終救命區 🔥
+   包含大小寫支援 (.gif / .GIF) 與 Display 修正
+*/
+img[src*=".gif"], img[src*=".GIF"] {
+    /* 強制去框 */
     border: none !important;
     box-shadow: none !important;
     background: transparent !important;
 
-    /* 強制指定渲染模式 (雙重保險) */
+    /* 🔴 關鍵修正：強制使用 inline-block */
+    /* 很多手機會暫停 display:block 的 GIF */
+    display: inline-block !important;
+    
+    /* 渲染模式 */
     image-rendering: auto !important;
     
-    /* 唯一需要的 GPU 喚醒指令 */
-    transform: translateZ(0);
-    will-change: transform;
+    /* 確保可見性 */
+    opacity: 1 !important;
+    visibility: visible !important;
+    
+    /* 移除過多的 GPU hack，有時候反而是負擔 */
+    transform: none !important;
 }
