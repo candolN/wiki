@@ -251,10 +251,11 @@ a.internal-link.locked::after,
 /* ------------------------------------------------------------
    模式 A：行內小圖示 (只要檔名包含 "icon-")
    例如：![[icon-flag.png]]
+   修正：D風格 (大尺寸 + 垂直置中)
    ------------------------------------------------------------ */
 img[src*="icon-"] {
     display: inline-block !important;       /* 併入文字行內 */
-    vertical-align: text-bottom !important; /* 對齊文字底部 */
+    vertical-align: middle !important;      /* 改動：垂直置中 (讓大圖標不會沉底) */
     
     /* 強制重置樣式 */
     border: none !important;                /* 移除黑框 */
@@ -264,8 +265,8 @@ img[src*="icon-"] {
     
     /* 尺寸控制 */
     width: auto !important;
-    height: 1.3em !important;               /* 高度鎖定為字體的 1.3 倍 */
-    margin: 0 4px !important;               /* 左右留白 */
+    height: 2.5em !important;               /* 改動：變大 (原本1.3em -> 現在2.5em) */
+    margin: 0 5px !important;               /* 左右留白 */
     min-width: unset !important;
 }
 
