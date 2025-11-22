@@ -366,25 +366,31 @@ h5 img[src*="icon-"], h6 img[src*="icon-"] {
 }
 
 /* ------------------------------------------------------------
-   4. GIF 救命區 (GIF Reset)
-   說明：針對手機，徹底移除所有像素化設定
+   4. GIF 救命區 (GIF Reset - Mobile Fix)
+   說明：針對手機，強制 GPU 介入並恢復平滑渲染
    ------------------------------------------------------------ */
 img[src*=".gif"] {
-    /* 外觀重置 */
+    /* 1. 外觀重置：去框、去陰影 */
     border: none !important;
     box-shadow: none !important;
     background: transparent !important;
     
-    /* 關鍵：針對 GIF，我們「取消」全域的像素化設定 */
-    /* 不要用 auto，改用 unset 或 initial 試試看，這對某些瀏覽器更有效 */
-    image-rendering: unset !important;
-    image-rendering: initial !important; 
+    /* 2. 渲染模式修正 (關鍵) */
+    /* 強制使用瀏覽器預設的平滑渲染，解決像素化導致的卡頓 */
+    image-rendering: auto !important;      
+    image-rendering: -webkit-optimize-contrast !important; /* iOS 特調 */
     
-    /* 確保寬度正常 */
+    /* 3. 強制 GPU 硬體加速 (最關鍵的一步) */
+    /* translateZ(0) 會欺騙手機開啟 3D 引擎來渲染這張圖 */
+    /* 這能有效防止手機為了省電而暫停 GIF */
+    transform: translateZ(0) !important;
+    -webkit-transform: translateZ(0) !important;
+    
+    /* 4. 告知瀏覽器屬性變化 */
+    will-change: transform, opacity !important;
+    
+    /* 5. 尺寸與顯示保護 */
     max-width: 100% !important;
     height: auto !important;
-    
-    /* 防止手機為了優化效能而暫停 GIF */
-    will-change: auto !important;
-    transform: none !important;
+    opacity: 1 !important; /* 防止被 Lazy load 隱藏 */
 }
