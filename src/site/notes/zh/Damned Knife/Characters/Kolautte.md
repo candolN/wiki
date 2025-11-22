@@ -8,7 +8,7 @@
  > * **全名：** Kolautte Enfez
  >  * **代號/綽號：** Kol、死刀子
  >  * **身份：** 傭兵
- >  * **相關人物：** [[zh/Damned Knife/Characters/Jevart\|Jevart]] | 同夥、[[zh/Damned Knife/Characters/Kol's son\|Kol的兒子]] | 兒子、[[zh/Damned Knife/Characters/Lokautte\|Lokautte]] | 兄弟
+ >  * **相關人物：** ![png/icon/icon_jevart.png](/img/user/png/icon/icon_jevart.png)[[zh/Damned Knife/Characters/Jevart\|Jevart]] | 同夥、![png/icon/icon_kamo.png](/img/user/png/icon/icon_kamo.png)[[zh/Damned Knife/Characters/Kol's son\|Kol的兒子]] | 兒子、![png/icon/icon_unknown.png](/img/user/png/icon/icon_unknown.png)[[zh/Damned Knife/Characters/Lokautte\|Lokautte]] | 兄弟
 <br>
 ## 簡介
 ---
@@ -26,7 +26,7 @@
 > * **【寡夫】**
 >曾經有一段還算是幸福的戀情，可惜妻子早早的就死了，所以現在獨自努力帶小孩。
 > * **【兄弟】**
->他聲稱自己有一個失散多年的雙胞胎兄弟"[[zh/Damned Knife/Characters/Lokautte\|Lokautte]]"，從外貌到聲音和自己一模一樣。他正在努力的尋找那個人。
+>他聲稱自己有一個失散多年的雙胞胎兄弟"Lokautte"，從外貌到聲音和自己一模一樣。他正在努力的尋找那個人。
 
 > [!history] **人際關係**
 >
