@@ -38,6 +38,7 @@
 | **![png/ui/icon-ui-golden.png](/img/user/png/ui/icon-ui-golden.png)交易區 (The Bazaar)**<br><br> [[Bar\|再來一杯酒吧]]<br> [[Clinic\|診所]]<br> [[Market\|市場]] |
 | **![png/ui/icon-lo-rust.png](/img/user/png/ui/icon-lo-rust.png) 暗區 (Rust Belt)**<br><br> [[Black_Market\|黑市]]<br> [[Arena\|廢棄地下角鬥場]]               |
 | **![png/ui/icon-l-outskirt.png](/img/user/png/ui/icon-l-outskirt.png) 荒原 (The Outskirts)**<br><br> [[Riverside\|河岸]]<br> [[Quarry\|礦坑]]               |
+
 <br>
 
 | **![png/ui/icon-ui_prohibit.png](/img/user/png/ui/icon-ui_prohibit.png)封鎖區域 (Restricted Area)**                                                                                                                                                                                                                                                                                          |
@@ -46,4 +47,5 @@
 
 <hr>
 
-[[zh/Damned Knife/DK_Hub\|↩️ 返回中立區導覽]]
+
+[[zh/Damned Knife/DK_Hub\|返回中立區導覽]]
