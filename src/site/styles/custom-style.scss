@@ -1,34 +1,321 @@
 /* ============================================================
-   PART 9: 最終緊急修正 (Emergency Overrides)
-   說明：修正 PART 8 權重過高導致標題圖示變大與 GIF 異常的問題
+   CANDOLN WIKI MASTER CSS (CLEAN FIXED VERSION)
    ============================================================ */
 
-/* 1. 拯救標題：強制標題內的 icon 回復成小尺寸 */
+/* ------------------------------------------------------------
+   PART 1: 變數與基礎設定 (Base Setup)
+   ------------------------------------------------------------ */
+body {
+    /* 定義紅色變數 */
+    --ugo-red-rgb: 214, 40, 40; /* 火磚紅 #D62828 */
+    --ugo-red: rgb(var(--ugo-red-rgb));
+    --ugo-bg: #ffffff;
+    --ugo-dot: #d0d0d0;
+    --ugo-black: #111111;
+    --ugo-shadow: 4px 4px 0px;
+    
+    /* 核彈修正：直接覆蓋 Obsidian 底層的高亮變數 */
+    --text-highlight-bg: rgba(var(--ugo-red-rgb), 0.3) !important;
+
+   
+    /* 全局字體顏色 */
+    --text-normal: var(--ugo-black) !important;
+}
+
+/* ------------------------------------------------------------
+   PART 2: 基礎元件 (Images, Bold, Highlights)
+   ------------------------------------------------------------ */
+/* 圖片像素化 & 邊框 */
+img {
+    image-rendering: pixelated;
+    border: 2px solid var(--ugo-black);
+    box-shadow: 4px 4px 0px rgba(0,0,0,0.2);
+    display: block;
+    margin: 10px auto;
+}
+
+/* 高亮筆修正 (殺死螢光黃) */
+html body mark, 
+html body .cm-highlight,
+html body .markdown-rendered mark {
+    background-color: rgba(var(--ugo-red-rgb), 0.3) !important;
+    color: var(--ugo-red) !important;
+    border-radius: 0px !important;
+    padding: 0 2px !important;
+    box-shadow: none !important;
+}
+
+/* 粗體字變紅 */
+strong, b {
+    color: var(--ugo-red) !important;
+}
+
+
+
+/* ------------------------------------------------------------
+   PART 3: Callout 框框 (Ugomeemo Style)
+   ------------------------------------------------------------ */
+html body .callout,
+html body .callout[data-callout="info"] {
+    background-color: #fff !important;
+    border: 2px solid var(--ugo-black) !important;
+    border-left: 6px solid var(--ugo-red) !important;
+    border-radius: 0 !important;
+    box-shadow: var(--ugo-shadow) var(--ugo-black) !important;
+    --callout-color: var(--ugo-red-rgb) !important;
+    --callout-icon: var(--ugo-red-rgb) !important;
+}
+
+/* 強制 Icon 與標題變色 */
+html body .callout .callout-icon,
+html body .callout[data-callout="info"] .callout-icon {
+    color: var(--ugo-red) !important;
+    stroke: var(--ugo-red) !important;
+    fill: var(--ugo-red) !important;
+}
+
+html body .callout .callout-title {
+    color: var(--ugo-red) !important;
+    font-weight: bold !important;
+}
+
+.callout:hover {
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0px var(--ugo-black) !important;
+    transition: all 0.1s step-end;
+}
+
+/* ------------------------------------------------------------
+   PART 4: 特效動畫 (Animations)
+   ------------------------------------------------------------ */
+/* 4.1 瘋狂抖動 (Shake Crazy) */
+@keyframes shake-crazy {
+    0% { transform: translate(2px, 1px) rotate(0deg); }
+    10% { transform: translate(-1px, -2px) rotate(-1deg); }
+    20% { transform: translate(-3px, 0px) rotate(1deg); }
+    30% { transform: translate(0px, 2px) rotate(0deg); }
+    40% { transform: translate(1px, -1px) rotate(1deg); }
+    50% { transform: translate(-1px, 2px) rotate(-1deg); }
+    60% { transform: translate(-3px, 1px) rotate(0deg); }
+    70% { transform: translate(2px, 1px) rotate(-1deg); }
+    80% { transform: translate(-1px, -1px) rotate(1deg); }
+    90% { transform: translate(2px, 2px) rotate(0deg); }
+    100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+
+.shake-crazy {
+    display: inline-block;
+    animation: shake-crazy 0.5s infinite;
+}
+
+/* 4.2 紅光呼吸 (Red Breath) */
+@keyframes breath-red-glow {
+    0% { transform: scale(1); text-shadow: 0 0 2px rgba(214, 40, 40, 0.3); }
+    50% { transform: scale(1.05); text-shadow: 0 0 15px rgba(214, 40, 40, 0.9), 0 0 5px rgba(214, 40, 40, 0.6); }
+    100% { transform: scale(1); text-shadow: 0 0 2px rgba(214, 40, 40, 0.3); }
+}
+
+.breathing-red {
+    display: inline-block;
+    animation: breath-red-glow 3s infinite ease-in-out;
+    color: #fff;
+}
+
+/* 4.3 慢速浮現 (Slow Appear) */
+@keyframes appear-slow-anim {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.appear-slow {
+    animation: appear-slow-anim 5s ease-in-out forwards;
+}
+
+/* ============================================================
+   PART 5: 終極表格修復 (GLOBAL TABLE & BUTTON FIX)
+   ============================================================ */
+
+/* 1. 強制所有表格外框與背景 */
+table {
+    margin: 20px auto !important;
+    width: 100% !important;
+    border-collapse: collapse !important;
+    border: 2px solid var(--ugo-black) !important;
+    background-color: white !important;
+}
+
+/* 2. 強制所有格子內容置中 (包含 Landing Page 和普通頁面) */
+th, td, .landing-page td {
+    border: 2px solid var(--ugo-black) !important;
+    padding: 15px !important;
+    vertical-align: middle !important; /* 垂直置中 */
+    text-align: center !important;     /* 水平置中 (這行最重要) */
+}
+
+/* 3. 表頭專屬樣式 */
+th {
+    background-color: var(--ugo-black) !important;
+    color: #ffffff !important;
+}
+
+/* 4. 強制修復連結按鈕 (置中 + 黑框) */
+/* 我們用非常具體的選擇器來確保覆蓋 */
+table td a,
+.landing-page td a,
+a.internal-link {
+    display: inline-block !important;
+    margin: 4px auto !important;      /* 上下留白，左右自動置中 */
+    padding: 5px 10px !important;
+    background-color: #fff !important;
+    border: 2px solid var(--ugo-black) !important;
+    color: var(--ugo-black) !important;
+    text-decoration: none !important;
+    font-weight: bold !important;
+    box-shadow: 2px 2px 0px rgba(0,0,0,0.1) !important;
+    transition: all 0.1s !important;
+}
+
+/* 按鈕滑鼠互動 */
+table td a:hover,
+.landing-page td a:hover {
+    background-color: var(--ugo-red) !important;
+    color: white !important;
+    transform: translate(2px, 2px) !important;
+    box-shadow: 1px 1px 0px black !important;
+}
+
+/* 5. 強制圖片大小與置中 */
+td img {
+    display: block !important;
+    margin: 0 auto !important;
+    width: 50px !important;  /* 強制統一大小，解決 !50 失效問題 */
+    height: auto !important;
+}
+
+/* ============================================================
+   PART 6: 標題與 UI Icon 特別修正 (Header Icon Fix) - V2修正版
+   ============================================================ */
+
+/* 針對 H1 ~ H6 標題內部的所有圖片進行樣式重置 */
+h1 img, h2 img, h3 img, h4 img, h5 img, h6 img {
+    display: inline-block !important;  /* 保持與文字同行 */
+    vertical-align: bottom !important; /* 底部對齊，通常比 middle 看起來更穩 */
+    
+    /* --- 關鍵修正 --- */
+    /* 強制限制圖片高度，讓它永遠不會超過標題文字太多 */
+    /* 1.5em 代表「當下字體大小的 1.5 倍」，這通常是 icon 最舒服的大小 */
+    height: 1.5em !important;          
+    width: auto !important;            /* 寬度自動計算，保持圖片比例不變形 */
+    /* ---------------- */
+
+    /* 移除全域圖片樣式與陰影 */
+    border: none !important;
+    box-shadow: none !important;
+    background: transparent !important;
+    
+    /* 調整間距 */
+    margin: 0 10px 0 0 !important;     /* 圖片右邊留點空隙 */
+}
+
+/* 針對某些生成器把圖片包在 span 的修正 */
+h1 span.image-embed, h2 span.image-embed {
+    display: inline-block !important;
+    height: auto !important;           /* 容器高度自動 */
+}
+
+/* ==============================================
+   PART 7: LOCKED CONTENT (未開放內容鎖定)
+   ============================================== */
+
+/* 被標記為 .locked 的連結 */
+a.internal-link.locked,
+.locked a {
+    pointer-events: none; /* 禁止點擊 */
+    cursor: not-allowed;  /* 滑鼠變成禁止符號 */
+    opacity: 0.5;         /* 變半透明 */
+    position: relative;
+    text-decoration: line-through !important; /* 刪除線 */
+}
+
+/* 加上一個小鎖頭圖示 */
+a.internal-link.locked::after,
+.locked a::after {
+    content: " 🔒";
+    font-size: 0.8em;
+}
+/* ============================================================
+   PART 8 (FINAL): 圖片與 Icon 分區治理系統 (The Unified Fix)
+   說明：整合所有 icon- 與 clean- 規則，防止樣式打架
+   ============================================================ */
+
+/* ------------------------------------------------------------
+   1. 預設規則：內文段落中的 DOL 風格大圖示
+   (這會應用在所有沒有被特別指定的地方)
+   ------------------------------------------------------------ */
+img[src*="icon-"] {
+    display: inline-block !important;
+    vertical-align: middle !important; /* 垂直置中，對齊文字腰部 */
+    border: none !important;           /* 去框 */
+    box-shadow: none !important;       /* 去陰影 */
+    background: transparent !important;
+    
+    /* 這裡維持你要的「大顆」風格 */
+    height: 2.2em !important;          
+    width: auto !important;
+    margin: 0 5px !important;
+    min-width: unset !important;
+}
+
+/* ------------------------------------------------------------
+   2. 標題規則：標題旁邊的小圖示 (Header Icons)
+   (權重高於上方，強制縮小以配合標題)
+   ------------------------------------------------------------ */
 h1 img[src*="icon-"], h2 img[src*="icon-"], 
 h3 img[src*="icon-"], h4 img[src*="icon-"], 
 h5 img[src*="icon-"], h6 img[src*="icon-"] {
-    height: 1.5em !important;           /* 改回適合標題的大小 */
+    height: 1.5em !important;          /* 標題裡要小一點 */
     width: auto !important;
-    vertical-align: bottom !important;  /* 改回底部對齊，標題才好看 */
-    margin: 0 10px 0 0 !important;      /* 回復原本間距 */
+    vertical-align: bottom !important; /* 底部對齊比較好看 */
+    margin: 0 10px 0 0 !important;
 }
 
-/* 2. 拯救 GIF：防止 GIF 被誤判為 icon 而變形 */
-/* 只要是 .gif 結尾的圖片，無視大小限制，顯示原圖 */
+/* ------------------------------------------------------------
+   3. 表格規則：表格內的圖示 (Table Icons) - 救命修正！
+   (權重最高，強制把圖片壓回 50px，恢復表格美化)
+   ------------------------------------------------------------ */
+table td img[src*="icon-"],
+.landing-page td img[src*="icon-"] {
+    /* 這裡不再看高度，而是看寬度，確保表格整齊 */
+    width: 50px !important;            
+    height: auto !important;           /* 高度自動，保持比例 */
+    
+    display: block !important;         /* 塊級顯示，方便置中 */
+    margin: 0 auto !important;         /* 強制水平置中 */
+    vertical-align: middle !important;
+    
+    /* 確保沒有殘留的邊框 */
+    border: none !important;
+    box-shadow: none !important;
+}
+
+/* ------------------------------------------------------------
+   4. 特殊規則：Clean 模式 (純淨原圖)
+   (用於那些不想有黑框，但也不想變更大小的圖片/GIF)
+   ------------------------------------------------------------ */
+img[src*="clean-"] {
+    border: none !important;
+    box-shadow: none !important;
+    background: transparent !important;
+    /* 不強制設定大小，由 Markdown 語法或原圖決定 */
+}
+
+/* ------------------------------------------------------------
+   5. GIF 保護網
+   (確保 GIF 不會被像素化弄壞，也不會被莫名其妙縮放)
+   ------------------------------------------------------------ */
 img[src$=".gif"] {
-    height: auto !important;
-    width: auto !important;
-    max-width: 100% !important;        /* 避免超出螢幕 */
     border: none !important;           /* GIF 通常不需要黑框 */
     box-shadow: none !important;
-    display: inline-block !important;  /* 保持流暢排版 */
-    margin: 10px auto !important;      /* 預設稍微置中 */
-}
-
-/* 3. 如果 GIF 是放在行內小圖示用的 (特殊情況) */
-/* 只有當 GIF 檔名同時包含 "icon-" 時，才允許它變小 */
-img[src$=".gif"][src*="icon-"] {
-    height: 2.2em !important;          /* 跟隨你的大像素風格 */
-    margin: 0 4px !important;
-    vertical-align: middle !important;
+    /* 如果 GIF 檔名剛好有 icon-，它會繼承上面的 2.2em 規則 */
+    /* 如果 GIF 檔名沒有 icon-，它會顯示原圖大小 */
 }
