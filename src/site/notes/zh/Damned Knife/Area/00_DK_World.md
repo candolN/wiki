@@ -10,6 +10,7 @@
 > 如果你不想成為陰溝裡的一具無名屍，請記住以下三條鐵律。
 
 <br>
+
 ### 1. 關於交易 (ECONOMY)
 > [!summary] **以物易物與信用點**
 > * 在這裡，外面的貨幣就是廢紙。我們只認 **子彈**、**藥品**、或是中介擔保的 **信用點數**。
@@ -33,8 +34,8 @@
 
 | **中立區內部 (Inner Sector)**                                                                                          |
 | :---------------------------------------------------------------------------------------------------------------- |
-| ** ![png/ui/icon-lo-living.png](/img/user/png/ui/icon-lo-living.png)生活區 (Living Quarters)**<br><br> [[The_Long_Room\|長方形房間]]<br> [[Orphanage\|孤兒院]]  |
-| ** ![png/ui/icon-ui-golden.png](/img/user/png/ui/icon-ui-golden.png)交易區 (The Bazaar)**<br><br> [[Bar\|再來一杯酒吧]]<br> [[Clinic\|診所]]<br> [[Market\|市場]] |
+| **![png/ui/icon-lo-living.png](/img/user/png/ui/icon-lo-living.png)生活區 (Living Quarters)**<br><br> [[The_Long_Room\|長方形房間]]<br> [[Orphanage\|孤兒院]]  |
+| **![png/ui/icon-ui-golden.png](/img/user/png/ui/icon-ui-golden.png)交易區 (The Bazaar)**<br><br> [[Bar\|再來一杯酒吧]]<br> [[Clinic\|診所]]<br> [[Market\|市場]] |
 | **![png/ui/icon-lo-rust.png](/img/user/png/ui/icon-lo-rust.png) 暗區 (Rust Belt)**<br><br> [[Black_Market\|黑市]]<br> [[Arena\|廢棄地下角鬥場]]               |
 | **![png/ui/icon-l-outskirt.png](/img/user/png/ui/icon-l-outskirt.png) 荒原 (The Outskirts)**<br><br> [[Riverside\|河岸]]<br> [[Quarry\|礦坑]]               |
 <br>
