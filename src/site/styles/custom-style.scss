@@ -25,13 +25,19 @@ body {
 /* ------------------------------------------------------------
    PART 2: 基礎元件 (Images, Bold, Highlights)
    ------------------------------------------------------------ */
-/* 圖片像素化 & 邊框 */
+/* 圖片基礎設定 (預設平滑，避免 GIF 卡死) */
 img {
-    image-rendering: pixelated;
+    image-rendering: auto; /* 改回預設，救回 GIF */
     border: 2px solid var(--ugo-black);
     box-shadow: 4px 4px 0px rgba(0,0,0,0.2);
     display: block;
     margin: 10px auto;
+}
+
+/* 🔴 新增這段：只針對「不是 GIF」的圖片開啟像素化 (DOL 風格) */
+img:not([src*=".gif"]) {
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
 }
 
 /* 高亮筆修正 (殺死螢光黃) */
@@ -366,31 +372,23 @@ h5 img[src*="icon-"], h6 img[src*="icon-"] {
 }
 
 /* ------------------------------------------------------------
-   4. GIF 救命區 (GIF Reset - Mobile Fix)
-   說明：針對手機，強制 GPU 介入並恢復平滑渲染
+   4. GIF 最終修復 (GIF Reset)
+   說明：確保 GIF 沒有邊框，且強制使用 GPU
    ------------------------------------------------------------ */
 img[src*=".gif"] {
-    /* 1. 外觀重置：去框、去陰影 */
+    /* 去除邊框與陰影 (如果你希望 GIF 也有黑框，這兩行可以刪掉) */
     border: none !important;
     box-shadow: none !important;
     background: transparent !important;
     
-    /* 2. 渲染模式修正 (關鍵) */
-    /* 強制使用瀏覽器預設的平滑渲染，解決像素化導致的卡頓 */
-    image-rendering: auto !important;      
-    image-rendering: -webkit-optimize-contrast !important; /* iOS 特調 */
+    /* 再次確保渲染模式是平滑的 */
+    image-rendering: auto !important;
     
-    /* 3. 強制 GPU 硬體加速 (最關鍵的一步) */
-    /* translateZ(0) 會欺騙手機開啟 3D 引擎來渲染這張圖 */
-    /* 這能有效防止手機為了省電而暫停 GIF */
-    transform: translateZ(0) !important;
-    -webkit-transform: translateZ(0) !important;
-    
-    /* 4. 告知瀏覽器屬性變化 */
-    will-change: transform, opacity !important;
-    
-    /* 5. 尺寸與顯示保護 */
+    /* 尺寸限制 */
     max-width: 100% !important;
     height: auto !important;
-    opacity: 1 !important; /* 防止被 Lazy load 隱藏 */
+    
+    /* 讓手機認為這是一個獨立圖層，防止滑動時暫停 */
+    transform: translate3d(0, 0, 0);
+    will-change: transform; 
 }
