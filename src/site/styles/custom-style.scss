@@ -310,12 +310,16 @@ img[src*="clean-"] {
 }
 
 /* ------------------------------------------------------------
-   5. GIF 保護網
-   (確保 GIF 不會被像素化弄壞，也不會被莫名其妙縮放)
+   5. GIF 保護網 (修復手機版 GIF 不動的問題)
    ------------------------------------------------------------ */
 img[src$=".gif"] {
-    border: none !important;           /* GIF 通常不需要黑框 */
+    border: none !important;
     box-shadow: none !important;
-    /* 如果 GIF 檔名剛好有 icon-，它會繼承上面的 2.2em 規則 */
-    /* 如果 GIF 檔名沒有 icon-，它會顯示原圖大小 */
+    
+    /* 關鍵修正：手機通常討厭對 GIF 做像素化運算，改回 auto 就會動了 */
+    image-rendering: auto !important; 
+    
+    /* 黑魔法：強制開啟硬體加速，有助於手機流暢播放 GIF */
+    transform: translateZ(0);
+    will-change: transform; 
 }
