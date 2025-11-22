@@ -310,16 +310,22 @@ img[src*="clean-"] {
 }
 
 /* ------------------------------------------------------------
-   5. GIF 保護網 (修復手機版 GIF 不動的問題)
+   5. GIF 保護網 (終極修復版)
    ------------------------------------------------------------ */
-img[src$=".gif"] {
+/* 注意這裡改成了 *= (包含)，而不是 $= (結尾) */
+/* 這樣就算網址變成 image.gif?v=123 也能被抓到 */
+img[src*=".gif"] {
     border: none !important;
     box-shadow: none !important;
     
-    /* 關鍵修正：手機通常討厭對 GIF 做像素化運算，改回 auto 就會動了 */
+    /* 強制手機使用最省力的渲染模式 */
     image-rendering: auto !important; 
+    image-rendering: -webkit-optimize-contrast !important; /* 針對 iOS 的額外參數 */
     
-    /* 黑魔法：強制開啟硬體加速，有助於手機流暢播放 GIF */
-    transform: translateZ(0);
-    will-change: transform; 
+    /* 移除可能導致某些舊手機崩潰的 3D 加速 hack */
+    /* transform: translateZ(0);  <-- 這行有時候反而是地雷，我們先拿掉 */
+    
+    /* 確保它不會被隨意縮放導致運算量過大 */
+    max-width: 100% !important;
+    height: auto !important;
 }
