@@ -7,8 +7,8 @@
 
 > [!summary] **地點概況**
 > * **區域：** 生活區
-> * **功能：** 孤兒收容、人道主義援助站<span style="background-color: black; color: black;" onmouseover="this.style.color='white'" onmouseout="this.style.color='black'">藥物臨床觀察點、未登錄人口轉運站</span>
-> * **住民：**瑪莎院長(管理者)、普通孤兒、Jevart(曾經的住民)
+> * **功能：** 孤兒收容、人道主義援助站 <span style="background-color: black; color: black;" onmouseover="this.style.color='white'" onmouseout="this.style.color='black'">藥物臨床觀察點、未登錄人口轉運站</span>
+> * **住民：**瑪莎院長 | 管理者、普通孤兒 | 住民、![png/ui/icon-c_jevart.png](/img/user/png/ui/icon-c_jevart.png)[[zh/Damned Knife/Characters/Jevart\|Jevart]] | 曾經的住民
 <br>
 ### 空間分布
 
