@@ -12,7 +12,7 @@
 <br>
 ## 簡介
 ---
-[[zh/Damned Knife/Characters/Kolautte\|Kolautte]]的獨生子。
+Kolautte的獨生子。
 很安靜聽話的小朋友，似乎缺乏正常人的觀念所以樣麼樣的情況都很淡定。
 <br>
 ## 已知情報
