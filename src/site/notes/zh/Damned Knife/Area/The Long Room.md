@@ -8,7 +8,7 @@
 > [!summary] **地點概況**
 > * **區域：** 生活區 (隱藏於舊工廠上方)
 > * **功能：** 安全屋、居住、物品存放
-> * **住戶：** ![png/ui/icon-c_jevart.png](/img/user/png/ui/icon-c_jevart.png)[[zh/Damned Knife/Characters/Jevart\|Jevart]] (屋主)、 ![png/ui/icon-c_kol.png](/img/user/png/ui/icon-c_kol.png)[[zh/Damned Knife/Characters/Kolautte\|Kolautte]](住客)、 ![png/ui/icon-c_kamo.png](/img/user/png/ui/icon-c_kamo.png)[[zh/Damned Knife/Characters/Kol's son\|Kol的兒子]](住客)
+> * **住戶：** ![png/ui/icon-c_jevart.png](/img/user/png/ui/icon-c_jevart.png)[[zh/Damned Knife/Characters/Jevart\|Jevart]] |屋主、![png/ui/icon-c_kol.png](/img/user/png/ui/icon-c_kol.png)[[zh/Damned Knife/Characters/Kolautte\|Kolautte]] | 住客、![png/ui/icon-c_kamo.png](/img/user/png/ui/icon-c_kamo.png)[[zh/Damned Knife/Characters/Kol's son\|Kol的兒子]] | 住客
 <br>
 ### 空間分布
 
