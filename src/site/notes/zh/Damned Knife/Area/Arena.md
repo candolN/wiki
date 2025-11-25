@@ -1,16 +1,16 @@
 ---
-{"dg-publish":true,"permalink":"/zh/Damned Knife/Area/The Long Room/"}
+{"dg-publish":true,"permalink":"/zh/Damned Knife/Area/Arena/"}
 ---
 
 
-#  ![png/ui/icon-lo-longroom.png](/img/user/png/ui/icon-lo-longroom.png)長方形房間 (The Long Room)
+# 廢棄地下角鬥場 (The Abolished Arena)
 
 > [!summary] **地點概況**
-> * **區域：** 生活區 (隱藏於舊工廠上方)
-> * **功能：** 安全屋、居住、物品存放
-> * **住民：** ![png/ui/icon-c_jevart.png](/img/user/png/ui/icon-c_jevart.png)[[zh/Damned Knife/Characters/Jevart\|Jevart]] | 屋主、![png/ui/icon-c_kol.png](/img/user/png/ui/icon-c_kol.png)[[zh/Damned Knife/Characters/Kolautte\|Kolautte]] | 住客、![png/ui/icon-c_kamo.png](/img/user/png/ui/icon-c_kamo.png)[[zh/Damned Knife/Characters/Kol's son\|Kol的兒子]] | 住客
+> * **區域：** 暗區
+> * **功能：** 
+
 <br>
-### 區域特寫
+### 空間分布
 
 這個狹長的空間被雜物硬生生切成了三個區域，沒有什麼隱私。
 
@@ -34,11 +34,11 @@
 
 > [!danger] **區域 C：Kolautte 的角落**
 > * **木製嬰兒床** 
-> 	Kolautte 親手做的，與這個房間格格不入。
+> 	Kolautte 親手做的，與這個殘酷的房間格格不入。
 > * **工具包** 
-> 	工具的工具。
+> 	裡面裝的東西可能比嬰兒床危險一百倍。
 
-
+<br>
 ### 相關軼事
 
 * 雖然一開始是逼不得已才住這，但他適應得很快。

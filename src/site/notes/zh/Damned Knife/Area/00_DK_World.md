@@ -21,12 +21,12 @@
 > > * 如果你需要消息，去找酒吧裡那個戴帽子的倒楣鬼。
 # ![png/ui/icon-l-sector.png](/img/user/png/ui/icon-l-sector.png)區域檔案 (SECTOR FILES)
 
-| **中立區內部 (Inner Sector)**                                                                                                                                         |
-| :--------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **![png/ui/icon-lo-living.png](/img/user/png/ui/icon-lo-living.png)生活區 (Living Quarters)**<br><br> [[zh/Damned Knife/Area/The Long Room\|長方形房間]]<br>[[zh/Damned Knife/Area/Orphanage\|孤兒院]]                              |
-| **![png/ui/icon-ui-golden.png](/img/user/png/ui/icon-ui-golden.png)交易區 (The Bazaar)**<br><br> [[zh/Damned Knife/Area/bar\|再來一杯酒吧]]<br> [[zh/Damned Knife/Area/clinic\|診所]]<br> [[Market\|市場]]       |
-| **![png/ui/icon-lo-rust.png](/img/user/png/ui/icon-lo-rust.png) 暗區 (The Blind Zone)**<br><br><span class="locked"> [[Black_Market\|黑市]]</span><br> <span class="locked">[[Arena\|廢棄地下角鬥場]]</span> |
-| **![png/ui/icon-l-outskirt.png](/img/user/png/ui/icon-l-outskirt.png) 荒原 (The Outskirts)**<br><br> [[Riverside\|河岸]]<br> [[Quarry\|礦坑]]                                                              |
+| **中立區內部 (Inner Sector)**                                                                                                                                                             |
+| :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **![png/ui/icon-lo-living.png](/img/user/png/ui/icon-lo-living.png)生活區 (Living Quarters)**<br><br> [[zh/Damned Knife/Area/The Long Room\|長方形房間]]<br>[[zh/Damned Knife/Area/Orphanage\|孤兒院]]                                                  |
+| **![png/ui/icon-ui-golden.png](/img/user/png/ui/icon-ui-golden.png)交易區 (The Bazaar)**<br><br> [[zh/Damned Knife/Area/bar\|再來一杯酒吧]]<br> [[zh/Damned Knife/Area/clinic\|診所]]<br> [[zh/Damned Knife/Area/market\|市場]]      |
+| **![png/ui/icon-lo-rust.png](/img/user/png/ui/icon-lo-rust.png) 暗區 (The Blind Zone)**<br><br><span class="locked"> [[Black_Market\|黑市]]</span><br><span class="locked">[[zh/Damned Knife/Area/Arena\|廢棄地下角鬥場]]</span> |
+| **![png/ui/icon-l-outskirt.png](/img/user/png/ui/icon-l-outskirt.png) 荒原 (The Outskirts)**<br><br> [[Riverside\|河岸]]<br> [[Quarry\|礦坑]]                                                                                  |
 
 | **![png/ui/icon-ui_prohibit.png](/img/user/png/ui/icon-ui_prohibit.png)封鎖區域 (Restricted Area)**                                                                                                                                                                                                                                                                                          |
 | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
